@@ -18,6 +18,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     private Player player;
     private Point playerPoint;
+    private ObstacleManager om = new ObstacleManager();
 
     public GameView(Context context){
         super(context);
@@ -73,6 +74,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     public void update(){
         player.update(playerPoint);
+        om.update();
     }
 
     @Override
