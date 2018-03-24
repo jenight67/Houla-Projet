@@ -1,7 +1,9 @@
-package uqac.dim.houla;
+package uqac.dim.houla.menu_options;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import uqac.dim.houla.R;
 
 public class OptionActivity extends AppCompatActivity {
 

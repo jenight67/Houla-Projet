@@ -1,9 +1,8 @@
-package uqac.dim.houla;
+package uqac.dim.houla.course;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Rect;
-
 
 import java.util.ArrayList;
 
@@ -41,7 +40,8 @@ public class ObstacleManager {
 
         int elapsedTime = (int)(System.currentTimeMillis() - startTime);
         for (Obstacle o: obstacles) {
-            o.incrementY();
+            //TODO J'ai juste ajouté une valeur arbitraire pour retirer l'exception, à changer
+            o.incrementY(0);
         }
     }
 

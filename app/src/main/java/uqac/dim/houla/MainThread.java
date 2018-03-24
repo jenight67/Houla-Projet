@@ -1,9 +1,9 @@
 package uqac.dim.houla;
 
 import android.graphics.Canvas;
-import android.provider.Settings;
-import android.util.Log;
 import android.view.SurfaceHolder;
+
+import uqac.dim.houla.course.GameView;
 
 /**
  *  Classe contenant le thread principale du jeu.

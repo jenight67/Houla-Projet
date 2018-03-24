@@ -1,4 +1,4 @@
-package uqac.dim.houla;
+package uqac.dim.houla.course;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,6 +8,8 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
+import uqac.dim.houla.MainThread;
 
 /**
  * Created by User on 08/03/2018.

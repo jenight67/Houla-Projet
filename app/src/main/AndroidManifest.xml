@@ -16,7 +16,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OptionActivity"></activity>
+        <activity android:name=".menu_options.OptionActivity"></activity>
+        <activity android:name=".reveil.GameView"></activity>
+        <!--
+        <activity android:name=".baston.GameView"></activity>
+        <activity android:name=".biere.GameView"></activity>
+        <activity android:name=".bourre.GameView"></activity>
+        <activity android:name=".cash.GameView"></activity>
+        <activity android:name=".couette.GameView"></activity>
+        <activity android:name=".motivation.GameView"></activity>
+        <activity android:name=".pote.GameView"></activity>
+        <activity android:name=".redac.GameView"></activity>
+        <activity android:name=".sleep.GameView"></activity>
+        <activity android:name=".vaisselle.GameView"></activity>
+        -->
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package uqac.dim.houla;
+package uqac.dim.houla.course;
 
 import android.graphics.Canvas;
 

@@ -11,10 +11,9 @@
     <Button
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:text="@string/play"
         android:layout_gravity="center"
         android:onClick="launchGame"
-        />
+        android:text="@string/play" />
 
     <Button
         android:layout_width="150dp"
@@ -23,5 +22,123 @@
         android:layout_gravity="center"
         android:onClick="launchOption"
         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jeux" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/reveil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:onClick="choisirJeu"
+            android:text="Eteins ton réveil" />
+
+        <Button
+            android:id="@+id/couette"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/reveil"
+            android:onClick="choisirJeu"
+            android:text="Remonte ta couette" />
+
+        <Button
+            android:id="@+id/pote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/reveil"
+            android:onClick="choisirJeu"
+            android:text="Réveille ton pote" />
+
+        <Button
+            android:id="@+id/course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/couette"
+            android:layout_toEndOf="@+id/pote"
+            android:onClick="choisirJeu"
+            android:text="Arrive à l'heure" />
+
+        <Button
+            android:id="@+id/sleep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/pote"
+            android:onClick="choisirJeu"
+            android:text="Me vs. Sleep" />
+
+        <Button
+            android:id="@+id/redac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/sleep"
+            android:layout_toEndOf="@+id/sleep"
+            android:onClick="choisirJeu"
+            android:text="Rédige ta rédac" />
+
+        <Button
+            android:id="@+id/motivation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/sleep"
+            android:onClick="choisirJeu"
+            android:text="Attrape ta motivation" />
+
+        <Button
+            android:id="@+id/vaisselle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/motivation"
+            android:layout_toEndOf="@+id/motivation"
+            android:onClick="choisirJeu"
+            android:text="Fais la vaisselle !" />
+
+        <Button
+            android:id="@+id/cash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/motivation"
+            android:onClick="choisirJeu"
+            android:text="Balance du cash !" />
+
+        <Button
+            android:id="@+id/biere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/motivation"
+            android:layout_toEndOf="@+id/cash"
+            android:onClick="choisirJeu"
+            android:text="Le meilleur jeu du monde" />
+
+        <Button
+            android:id="@+id/bourre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/cash"
+            android:onClick="choisirJeu"
+            android:text="Bourré or not ?" />
+
+        <Button
+            android:id="@+id/baston"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cash"
+            android:layout_toEndOf="@+id/bourre"
+            android:onClick="choisirJeu"
+            android:text="Ca tourne mal" />
+    </RelativeLayout>
 
 </LinearLayout>
