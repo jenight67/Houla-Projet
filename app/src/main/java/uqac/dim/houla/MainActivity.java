@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
     //Au clic sur le bouton de choix de jeu
     public void choisirJeu(View v)
     {
-        Log.i("MainActivity", "MainActivity.ajouterSaveur");
 
+        Intent intent;
         try {
             switch (v.getId()) {
 
@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
                     break;
                 case R.id.course:
-
+                    Log.i("MainActivity", "Clic sur course");
+                    setContentView(new uqac.dim.houla.course.GameView(this));
                     break;
                 case R.id.motivation:
 
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.reveil:
                     Log.i("MainActivity", "Clic sur réveil");
-                    Intent intent = new Intent(this, GameView.class);
+                    intent = new Intent(this, GameView.class);
                     startActivity(intent);
                     break;
                 case R.id.sleep:
