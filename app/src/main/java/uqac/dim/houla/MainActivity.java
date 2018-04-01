@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import uqac.dim.houla.course.Constant;
 import uqac.dim.houla.menu_options.OptionActivity;
 import uqac.dim.houla.reveil.GameView;
 
