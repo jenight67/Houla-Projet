@@ -6,6 +6,8 @@ import android.graphics.Rect;
 
 import java.util.ArrayList;
 
+import uqac.dim.houla.Constant;
+
 
 /**
  * Obstacle Manager du Mini-Jeu ne rate pas le bus

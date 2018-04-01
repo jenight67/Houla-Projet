@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import uqac.dim.houla.course.Constant;
 import uqac.dim.houla.menu_options.OptionActivity;
 import uqac.dim.houla.reveil.GameView;
 
@@ -40,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
     //Au clic sur le bouton de choix de jeu
     public void choisirJeu(View v)
     {
-        Log.i("MainActivity", "MainActivity.ajouterSaveur");
-
         try {
             switch (v.getId()) {
 
