@@ -22,6 +22,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private Point playerPoint;
     private ObstacleManager om = new ObstacleManager();
 
+    private static final int PLAYER_HEIGHT = Constant.SCREEN_HEIGHT*7/10;
+
     public GameView(Context context){
         super(context);
 
@@ -31,7 +33,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         player = new Player(new Rect(100,100,200,200), Color.rgb(255,0,0));
 
-        playerPoint = new Point(150,150);
+        playerPoint = new Point(Constant.SCREEN_WIDTH,PLAYER_HEIGHT);
 
         setFocusable(true);
     }
@@ -66,7 +68,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         switch(event.getAction()){
             case MotionEvent.ACTION_DOWN:
             case MotionEvent.ACTION_MOVE:
-                playerPoint.set((int)event.getX(),(int)event.getY());
+                playerPoint.set((int)event.getX(),Constant.SCREEN_HEIGHT*7/10); //Déplace le joueur mais le fait rester sur une ligne
         }
 
 

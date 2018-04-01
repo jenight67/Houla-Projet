@@ -18,6 +18,7 @@ public class ObstacleManager {
     private ArrayList<Obstacle> obstacles;
 
     private long startTime;
+    private float speed;
 
     private int currY;
 
@@ -31,19 +32,26 @@ public class ObstacleManager {
     }
 
     private void populateObstacles(){
+        currY += -5*Constant.SCREEN_HEIGHT/4;
         while(obstacles.get(obstacles.size()-1).getRectangle().bottom < 0){
             int StartX = (int)(Math.random()*(Constant.SCREEN_WIDTH));
             obstacles.add(new Obstacle(new Rect(),Color.WHITE));
-            currY += 1 ;
+            currY += -50 ;
         }
     }
 
     public void update(){
-
         int elapsedTime = (int)(System.currentTimeMillis() - startTime);
+        startTime = System.currentTimeMillis();
+        speed = Constant.SCREEN_HEIGHT/10000.0f;
+
+
         for (Obstacle o: obstacles) {
-            //TODO J'ai juste ajouté une valeur arbitraire pour retirer l'exception, à changer
-            o.incrementY(0);
+            o.incrementY(speed*elapsedTime);
+        }
+
+        while(obstacles.get(obstacles.size()-1).getRectangle().top >= Constant.SCREEN_HEIGHT){
+            obstacles.remove(obstacles.size()-1);
         }
     }
 

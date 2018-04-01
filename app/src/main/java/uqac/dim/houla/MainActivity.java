@@ -1,5 +1,6 @@
 package uqac.dim.houla;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,10 +10,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import uqac.dim.houla.course.Constant;
 import uqac.dim.houla.menu_options.OptionActivity;
 import uqac.dim.houla.reveil.GameView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     //Au clic sur le bouton de choix de jeu
     public void choisirJeu(View v)
     {
+
+        Intent intent;
         try {
             switch (v.getId()) {
 
@@ -58,7 +62,10 @@ public class MainActivity extends AppCompatActivity {
 
                     break;
                 case R.id.course:
-
+                    Log.i("MainActivity", "Clic sur course");
+                    uqac.dim.houla.course.GameView gm = new uqac.dim.houla.course.GameView(this);
+                    setContentView(gm);
+                    gm.setActivity(this);
                     break;
                 case R.id.motivation:
 
@@ -71,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.reveil:
                     Log.i("MainActivity", "Clic sur réveil");
-                    Intent intent = new Intent(this, GameView.class);
+                    intent = new Intent(this, GameView.class);
                     startActivity(intent);
                     break;
                 case R.id.sleep:

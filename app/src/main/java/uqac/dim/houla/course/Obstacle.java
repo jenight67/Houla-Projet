@@ -13,15 +13,13 @@ public class Obstacle implements GameObject {
 
     private Rect rectangle;
     private int color;
-    private int currY;
-    private int startX;
 
     public Rect getRectangle(){
         return rectangle;
     }
 
-    public Obstacle(Rect rectangle, int color){
-        this.rectangle = rectangle;
+    public Obstacle(int height, int color, int startX, int startY){
+        this.rectangle = new Rect(startX-100, startY, startX, startY+height );
         this.color = color;
     }
 
