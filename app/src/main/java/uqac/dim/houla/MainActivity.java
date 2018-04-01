@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
                     Log.i("MainActivity", "Clic sur course");
                     uqac.dim.houla.course.GameView gm = new uqac.dim.houla.course.GameView(this);
                     setContentView(gm);
-                    gm.setActivity(this);
+                    //gm.setActivity(this);
                     break;
                 case R.id.motivation:
 
