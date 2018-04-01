@@ -1,5 +1,6 @@
 package uqac.dim.houla;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import uqac.dim.houla.course.Constant;
 import uqac.dim.houla.menu_options.OptionActivity;
 import uqac.dim.houla.reveil.GameView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +63,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.course:
                     Log.i("MainActivity", "Clic sur course");
-                    setContentView(new uqac.dim.houla.course.GameView(this));
+                    uqac.dim.houla.course.GameView gm = new uqac.dim.houla.course.GameView(this);
+                    setContentView(gm);
+                    gm.setActivity(this);
                     break;
                 case R.id.motivation:
 
