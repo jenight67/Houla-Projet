@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import uqac.dim.houla.Constant;
 import uqac.dim.houla.MainThread;
 
 /**
@@ -142,8 +143,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         if(gameOver){
             //main.setContentView(main);
-            Intent intent = new Intent(main, main.class);
-            main.startActivity(intent);
+            //Intent intent = new Intent(main, main.class);
+            //main.startActivity(intent);
         }
 
         if(win){
