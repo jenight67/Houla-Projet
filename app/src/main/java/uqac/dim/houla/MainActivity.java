@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import uqac.dim.houla.course.Constant;
 import uqac.dim.houla.menu_options.OptionActivity;
 import uqac.dim.houla.reveil.GameView;
 
@@ -73,7 +72,7 @@ public class MainActivity extends Activity {
                     Log.i("MainActivity", "Clic sur course");
                     uqac.dim.houla.course.GameView gm = new uqac.dim.houla.course.GameView(this);
                     setContentView(gm);
-                    gm.setActivity(this);
+                    //gm.setActivity(this);
                     break;
                 case R.id.motivation:
 

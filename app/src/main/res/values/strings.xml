@@ -2,4 +2,6 @@
     <string name="app_name">Houla</string>
     <string name="play">Jouer</string>
     <string name="option">Options</string>
+    <string name="reveil">reveil</string>
+    <string name="regle_reveil">Dans ce jeu, tu vas devoir appuyer 8 fois sur ton réveil pour le faire taire. Attention, il risque de se déplacer ! ....</string>
 </resources>
