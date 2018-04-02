@@ -34,6 +34,14 @@ public class MainActivity extends Activity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setContentView(R.layout.activity_main);
+
+
+    }
+
     public void launchGame(View v){
 
     }
