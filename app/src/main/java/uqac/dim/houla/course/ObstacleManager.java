@@ -21,7 +21,7 @@ public class ObstacleManager {
 
     private long startTime;
     private float speed;
-    private float speedMult = 1;
+    private float speedMult = 4;
 
     private int currY;
     private int distObs;

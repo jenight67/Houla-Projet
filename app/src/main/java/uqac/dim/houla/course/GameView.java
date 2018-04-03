@@ -27,8 +27,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private Point playerPoint;
     private ObstacleManager om = new ObstacleManager(100,100);
 
-
-
     private boolean movingPlayer = false;
     private boolean gameOver = false;
     private boolean win = false;
@@ -136,6 +134,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         om.draw(canvas);
 
+        //Affichage du Timer
         Paint p = new Paint();
         p.setTextSize(50);
         p.setColor(Color.RED);
@@ -149,8 +148,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         if(win){
             //main.setContentView(new uqac.dim.houla.course.GameView(main));
-            Intent intent = new Intent(main, uqac.dim.houla.reveil.GameView.class);
-            main.startActivity(intent);
+            //Intent intent = new Intent(main, uqac.dim.houla.reveil.GameView.class);
+            //main.startActivity(intent);
         }
 
 
