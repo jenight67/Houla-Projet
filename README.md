@@ -12,6 +12,14 @@ Dans Android Studio, cliquez sur File -> New -> Project From Version Control -> 
 
 ### Avancement :
 Le prototype du mini-jeu de course (Arrive à l'heure sur le menu principal) est terminé, il ne reste que l'ajout d'image et du polissage.
+Le mini-jeu du reveil (eteint ton reveil dans le menu principal) est presque terminé.
 
 ### Capture d'écran :
+Menu Principal :
+![menu](https://github.com/jenight67/Houla-Projet/tree/master/ScreenProjet/MenuPrincipal.PNG "Menu principal")
 
+Course :
+![course](https://github.com/jenight67/Houla-Projet/tree/master/ScreenProjet/Course.PNG "Mini-jeu ne soit pas en retard")
+
+Reveil :
+![course](https://github.com/jenight67/Houla-Projet/tree/master/ScreenProjet/Reveil.PNG "Mini-jeu eteint ton reveil")
