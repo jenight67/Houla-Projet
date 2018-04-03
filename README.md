@@ -22,4 +22,4 @@ Course :
 ![course](https://github.com/jenight67/Houla-Projet/tree/master/ScreenProjet/Course.PNG "Mini-jeu ne soit pas en retard")
 
 Reveil :
-![course](https://github.com/jenight67/Houla-Projet/tree/master/ScreenProjet/Reveil.PNG "Mini-jeu eteint ton reveil")
+![reveil](https://github.com/jenight67/Houla-Projet/tree/master/ScreenProjet/Reveil.PNG "Mini-jeu eteint ton reveil")
