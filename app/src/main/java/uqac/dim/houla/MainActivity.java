@@ -78,7 +78,9 @@ public class MainActivity extends Activity {
 
                     break;
                 case R.id.pote:
-
+                    Log.i("MainActivity", "Clic sur pote");
+                    intent = new Intent(this, uqac.dim.houla.pote.GameView.class);
+                    startActivity(intent);
                     break;
                 case R.id.redac:
 

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="uqac.dim.houla">
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -18,6 +21,7 @@
         </activity>
         <activity android:name=".menu_options.OptionActivity"></activity>
         <activity android:name=".reveil.GameView"></activity>
+        <activity android:name=".pote.GameView"></activity>
         <!--
         <activity android:name=".baston.GameView"></activity>
         <activity android:name=".biere.GameView"></activity>
@@ -25,7 +29,7 @@
         <activity android:name=".cash.GameView"></activity>
         <activity android:name=".couette.GameView"></activity>
         <activity android:name=".motivation.GameView"></activity>
-        <activity android:name=".pote.GameView"></activity>
+
         <activity android:name=".redac.GameView"></activity>
         <activity android:name=".sleep.GameView"></activity>
         <activity android:name=".vaisselle.GameView"></activity>
