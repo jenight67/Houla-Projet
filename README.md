@@ -9,3 +9,9 @@ Dans Android Studio, cliquez sur File -> New -> Project From Version Control -> 
 - N'oubliez pas qu'il n'est finalement PAS NECESSAIRE de faire un fork, et qu'on peut travailler directement sur ce dépôt
 - Développez les classes Java dans les package associés à votre jeu
 - Pour tester, liez vos activités secondaires au bouton correspondant de l'activité principale
+
+### Avancement :
+Le prototype du mini-jeu de course (Arrive à l'heure sur le menu principal) est terminé, il ne reste que l'ajout d'image et du polissage.
+
+### Capture d'écran :
+
