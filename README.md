@@ -12,6 +12,7 @@ Dans Android Studio, cliquez sur File -> New -> Project From Version Control -> 
 
 ### Avancement :
 Le prototype du mini-jeu de course (Arrive à l'heure sur le menu principal) est terminé, il ne reste que l'ajout d'image et du polissage.
+
 Le mini-jeu du reveil (eteint ton reveil dans le menu principal) est presque terminé.
 
 ### Capture d'écran (il faut cliquer sur les liens si elles ne s'affichent pas):
