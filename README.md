@@ -17,10 +17,10 @@ Le mini-jeu du reveil (eteint ton reveil dans le menu principal) est presque ter
 
 ### Capture d'écran (il faut cliquer sur les liens si elles ne s'affichent pas):
 Menu Principal :
-![menu](https://github.com/jenight67/Houla-Projet/tree/master/ScreenProjet/MenuPrincipal.PNG "Menu principal")
+![menu](https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/MenuPrincipal.PNG "Menu principal")
 
 Course :
-![course](https://github.com/jenight67/Houla-Projet/tree/master/ScreenProjet/Course.PNG)
+![course](https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Course.PNG "Course")
 
 Reveil :
-![reveil](https://github.com/jenight67/Houla-Projet/tree/master/ScreenProjet/Reveil.PNG "Mini-jeu eteint ton reveil")
+![reveil](https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Reveil.PNG "Mini-jeu eteint ton reveil")
