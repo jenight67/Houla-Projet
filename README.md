@@ -20,7 +20,7 @@ Menu Principal :
 ![menu](https://github.com/jenight67/Houla-Projet/tree/master/ScreenProjet/MenuPrincipal.PNG "Menu principal")
 
 Course :
-![course](https://github.com/jenight67/Houla-Projet/tree/master/ScreenProjet/Course.PNG "Mini-jeu ne soit pas en retard")
+![course](https://github.com/jenight67/Houla-Projet/tree/master/ScreenProjet/Course.PNG)
 
 Reveil :
 ![reveil](https://github.com/jenight67/Houla-Projet/tree/master/ScreenProjet/Reveil.PNG "Mini-jeu eteint ton reveil")
