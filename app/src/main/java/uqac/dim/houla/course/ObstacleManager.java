@@ -20,7 +20,7 @@ public class ObstacleManager {
     private ArrayList<Obstacle> obstacles;
 
     private long startTime;
-    private float speed;
+    private float speed = Constant.SCREEN_HEIGHT/10000.0f;
     private float speedMult = 4;
 
     private int currY;
@@ -61,9 +61,8 @@ public class ObstacleManager {
     public void update(){
         int elapsedTime = (int)(System.currentTimeMillis() - startTime);
         startTime = System.currentTimeMillis();
-        speed = Constant.SCREEN_HEIGHT/10000.0f;
 
-
+        //Deplace les obstacles
         for (Obstacle o: obstacles) {
             o.incrementY(speed * elapsedTime * speedMult);
         }
@@ -72,9 +71,9 @@ public class ObstacleManager {
 
 
             int startX = (int)(Math.random()*(Constant.SCREEN_WIDTH));
-            obstacles.add(0,new Obstacle(obsHeight,Color.BLACK,startX,currY));
-            obstacles.remove(obstacles.size()-1);
-        }
+        obstacles.add(0,new Obstacle(obsHeight,Color.BLACK,startX,currY));
+        obstacles.remove(obstacles.size()-1);
+    }
     }
 
     public void draw(Canvas canvas){
