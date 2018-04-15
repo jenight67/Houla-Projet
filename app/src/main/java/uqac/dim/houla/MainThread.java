@@ -49,7 +49,7 @@ public class MainThread extends Thread {
                 canvas = this.surfaceHolder.lockCanvas();
 
                 synchronized (surfaceHolder) {
-                    //C'est deux lignes sont le coeur de la boucle de jeu
+                    //Ces deux lignes sont le coeur de la boucle de jeu
                     //effectue les calculs logiques
                     this.gameView.update();
                     //Dessine l'ecran
@@ -70,12 +70,14 @@ public class MainThread extends Thread {
             waitTime = targetTime - timeMillis;
             try{
                 if(waitTime > 0){
+                    //Attend le temps necessaire avant de generer une nouvelle frame
                     this.sleep(waitTime);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
+            // Compteur de FPS dans la console
             totalTime += System.nanoTime() - startTime;
             frameCount++;
 

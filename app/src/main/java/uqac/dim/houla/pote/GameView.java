@@ -39,7 +39,7 @@ public class GameView extends AppCompatActivity {
             float delta = acelVal-acelLast;
             shake = shake * 0.9f + delta; // perform low-cut filter
             if (shake >12) {
-                Toast toast =Toast.makeText(getApplicationContext(), "ARRETE DE SECOUER PD", Toast.LENGTH_LONG);
+                Toast toast =Toast.makeText(getApplicationContext(), "ARRETE DE SECOUER", Toast.LENGTH_LONG);
                 toast.show();
             }
         }
