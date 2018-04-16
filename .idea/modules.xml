@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Houla-Projet.iml" filepath="$PROJECT_DIR$/Houla-Projet.iml" />
-      <module fileurl="file://D:/Lucas/Documents/Info 2A/Android Projects/Houla-Projet/.idea/Houla-Projet.iml" filepath="D:/Lucas/Documents/Info 2A/Android Projects/Houla-Projet/.idea/Houla-Projet.iml" />
       <module fileurl="file://$PROJECT_DIR$/Projet.iml" filepath="$PROJECT_DIR$/Projet.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:/Lucas/Documents/Info 2A/Android Projects/Houla-Projet/app/app.iml" filepath="D:/Lucas/Documents/Info 2A/Android Projects/Houla-Projet/app/app.iml" />
     </modules>
   </component>
 </project>

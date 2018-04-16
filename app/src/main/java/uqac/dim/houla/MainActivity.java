@@ -70,9 +70,8 @@ public class MainActivity extends Activity {
                     break;
                 case R.id.course:
                     Log.i("MainActivity", "Clic sur course");
-                    uqac.dim.houla.course.GameView gm = new uqac.dim.houla.course.GameView(this);
-                    setContentView(gm);
-                    //gm.setActivity(this);
+                    intent = new Intent(this, uqac.dim.houla.course.courseActivity.class);
+                    startActivityForResult(intent,1); // Le request code est le numero du minijeu dans le futur tableau
                     break;
                 case R.id.motivation:
 
@@ -105,5 +104,31 @@ public class MainActivity extends Activity {
     public void launchOption(View v){
         Intent intent = new Intent(this, OptionActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        boolean result = true;
+        if(requestCode == 1 && resultCode == RESULT_OK){
+            result = data.getBooleanExtra("win",true);
+        }
+
+        if (result){
+            nextMiniGame(requestCode);
+        } else {
+            endGame();
+        }
+    }
+
+    public void nextMiniGame(int nbMinijeu){
+        //Prochain mini jeu
+        Log.i("MainActivity", "Lancement de réveil");
+        Intent intent = new Intent(this, GameView.class);
+        startActivity(intent);
+
+    }
+
+    public void endGame(){
+        //Afficher Score
     }
 }

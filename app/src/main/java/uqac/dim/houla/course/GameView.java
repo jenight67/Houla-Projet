@@ -13,6 +13,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import uqac.dim.houla.Constant;
+import uqac.dim.houla.MainActivity;
 import uqac.dim.houla.MainThread;
 
 /**
@@ -20,7 +21,7 @@ import uqac.dim.houla.MainThread;
  */
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
-    private Activity main;
+    private courseActivity main;
     private MainThread thread;
 
     private Player player;
@@ -53,18 +54,17 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         initTime = System.currentTimeMillis();
     }
 
-    private String getTimer(){
+    private int getTimer(){
         long currTime = System.currentTimeMillis();
         int time = (int)((currTime - initTime) /1000);
         time = TIMER - time;
         if(time <= 0){
             win = true;
         }
-        String res = String.valueOf(time);
-        return res;
+        return time;
     }
 
-    public void setActivity(Activity main){
+    public void setActivity(courseActivity main){
         this.main = main;
     }
 
@@ -138,18 +138,28 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         Paint p = new Paint();
         p.setTextSize(50);
         p.setColor(Color.RED);
-        canvas.drawText(getTimer(), 0,Constant.SCREEN_HEIGHT - 50,p);
+
+        int timeInt = getTimer();
+        String timeStr = String.valueOf(timeInt);
+
+        canvas.drawText(timeStr, 0,Constant.SCREEN_HEIGHT - 50,p);
+
+        Paint pRect = new Paint();
+        pRect.setColor(Color.BLUE);
+
+        int longRect = Constant.SCREEN_WIDTH * timeInt /TIMER;
+
+        Rect recTime = new Rect(0,0,longRect,50);
+        //Rect recTime = new Rect(0,0,longRect,50);
+        canvas.drawRect(recTime,pRect);
+
 
         if(gameOver){
-            //main.setContentView(main);
-            //Intent intent = new Intent(main, main.class);
-            //main.startActivity(intent);
+            main.lose();
         }
 
         if(win){
-            //main.setContentView(new uqac.dim.houla.course.GameView(main));
-            //Intent intent = new Intent(main, uqac.dim.houla.reveil.GameView.class);
-            //main.startActivity(intent);
+            main.win();
         }
 
 
