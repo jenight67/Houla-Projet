@@ -23,7 +23,8 @@ public class GameView extends AppCompatActivity {
 
     int index;
     boolean partieEnCours;
-    String[] texteRedac = { "S", "u", "p", "e", "r", " ", "N", "i", "l", "s", " ", "!"};
+    String[] texteRedac = { "S", "u", "p", "e", "r", " ", "N", "i", "l", "s", " ", "!", " "};
+    //TODO : Faire un texte plus long que ce qui est cliquable par l'homme, de manière à ce que jamais personne n'arrive à voir ce qui est écrit à la fin
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,13 +32,23 @@ public class GameView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.redac_jeu);
 
-        //On met le index à 0
-        index = 0;
-
         //On récupère le layout de fin
         LinearLayout layoutFin = findViewById(R.id.layoutFin);
         //On masque le layout de fin
         layoutFin.setAlpha(0.0f);
+
+        //On récupère l'instance de la zone de texte
+        TextView zoneDeTexte = findViewById(R.id.zoneDeTexte);
+        //On set le premier caractère
+        zoneDeTexte.setText(texteRedac[0]);
+
+        //On récupère l'instance du bouton
+        Button boutonRedac = findViewById(R.id.boutonRedac);
+        //On met son texte au second caractère
+        boutonRedac.setText(texteRedac[1]);
+
+        //On met le index à 1
+        index = 1;
     }
 
     public void launchGame(View v)
@@ -109,7 +120,7 @@ public class GameView extends AppCompatActivity {
             //On adapte le titre de fin
             titreFin.setText("Gagné !");
             //On adapte le message de fin
-            messageFin.setText("Bravo, tu as réussi à éteindre " + index + " fois ton réveil ! Tu peux aller en cours en toute tranquilité !");
+            messageFin.setText("Bravo, tu as écrire " + index + " caractères ! Tu mérite de continuer tes études !");
             //On récupère l'instance de l'image des confettis
             ImageView imageConfettis = findViewById(R.id.imageConfettis);
             //On rend l'image visible
@@ -126,7 +137,7 @@ public class GameView extends AppCompatActivity {
             //On adapte le titre de fin
             titreFin.setText("Perdu...");
             //On adapte le message de fin
-            messageFin.setText("Zut, tu n'as réussi à éteindre ton réveil que " + index + " fois, bon allez, on continue...");
+            messageFin.setText("Zut, tu n'as réussi à écrire que " + index + " caractères, dommage, tu n'auras pas ton semestre !");
             titreFin.setTextColor(getResources().getColor(R.color.red));
             //On récupère l'instance de l'image triste
             ImageView imageTriste = findViewById(R.id.imageTriste);
@@ -152,7 +163,7 @@ public class GameView extends AppCompatActivity {
 
     public void clicClavier(View v)
     {
-        if (partieEnCours)
+        if (partieEnCours && index < texteRedac.length - 1)
         {
             //On récupère l'instance de la zone de texte
             TextView zoneDeTexte = findViewById(R.id.zoneDeTexte);
@@ -160,13 +171,13 @@ public class GameView extends AppCompatActivity {
             Button boutonRedac = findViewById(R.id.boutonRedac);
 
             //On incrémente le compteur de l'index
-            index++;
+            //index++;
 
             //On affiche le caractère supplémentaire
             zoneDeTexte.setText(zoneDeTexte.getText() + texteRedac[index]);
 
             //On met à jour le bouton
-            boutonRedac.setText(texteRedac[index]);
+            boutonRedac.setText(texteRedac[++index]);
         }
     }
 
