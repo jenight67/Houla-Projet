@@ -82,7 +82,9 @@ public class MainActivity extends Activity {
                     startActivity(intent);
                     break;
                 case R.id.redac:
-
+                    Log.i("MainActivity", "Clic sur redac");
+                    intent = new Intent(this, uqac.dim.houla.redac.GameView.class);
+                    startActivity(intent);
                     break;
                 case R.id.reveil:
                     Log.i("MainActivity", "Clic sur réveil");

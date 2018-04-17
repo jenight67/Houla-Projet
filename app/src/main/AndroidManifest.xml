@@ -32,18 +32,11 @@
         <activity
             android:name=".pote.GameView"
             android:screenOrientation="portrait" />
-        <!--
-        <activity android:name=".baston.GameView"></activity>
-        <activity android:name=".biere.GameView"></activity>
-        <activity android:name=".bourre.GameView"></activity>
-        <activity android:name=".cash.GameView"></activity>
-        <activity android:name=".couette.GameView"></activity>
-        <activity android:name=".motivation.GameView"></activity>
 
-        <activity android:name=".redac.GameView"></activity>
-        <activity android:name=".sleep.GameView"></activity>
-        <activity android:name=".vaisselle.GameView"></activity>
-        -->
+        <activity
+            android:name=".redac.GameView"
+            android:screenOrientation="portrait" />
+
         <activity android:name=".course.courseActivity"></activity>
     </application>
 
