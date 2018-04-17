@@ -41,33 +41,12 @@
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="50sp" />
-
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/reveilLayout"
+            <ImageView
+                android:id="@+id/imageMecEndormie"
                 android:layout_width="match_parent"
-                android:layout_height="411dp">
-
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="56dp"
-                    android:layout_height="61dp"
-                    android:contentDescription="@string/reveil"
-                    android:onClick="clicReveil"
-                    app:srcCompat="@drawable/reveil"
-                    tools:layout_editor_absoluteX="89dp"
-                    tools:layout_editor_absoluteY="61dp" />
-            </android.support.constraint.ConstraintLayout>
-
-            <TextView
-                android:id="@+id/compteur"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@android:color/holo_red_light"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
+                android:layout_height="wrap_content"
+                android:src="@drawable/mec_endormi" />
+            
         </LinearLayout>
 
         <ImageView
@@ -107,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40sp"
                 android:backgroundTint="@android:color/background_light"
-                android:text="Bravo, tu as réussi à éteindre 7 fois ton réveil ! Tu peux aller en cours en toute tranquilité !"
+                android:text="Bravo, tu as réussi à réveiller ton pote, resserre-lui donc un autre verre !"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -131,7 +110,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="200sp"
-                android:text="Éteins ton réveil"
+                android:text="Réveil ton pote !"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_dark"
                 android:textSize="40sp"
@@ -143,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40sp"
                 android:backgroundTint="@android:color/background_light"
-                android:text="@string/regle_reveil"
+                android:text="@string/regle_pote"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 

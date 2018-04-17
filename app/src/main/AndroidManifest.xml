@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="uqac.dim.houla">
+
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
         android:required="true" />
@@ -10,10 +11,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:screenOrientation="portrait">
-        <activity android:name=".MainActivity"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,12 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".menu_options.OptionActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".reveil.GameView"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".pote.GameView"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".menu_options.OptionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reveil.GameView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pote.GameView"
+            android:screenOrientation="portrait" />
         <!--
         <activity android:name=".baston.GameView"></activity>
         <activity android:name=".biere.GameView"></activity>
@@ -39,6 +44,7 @@
         <activity android:name=".sleep.GameView"></activity>
         <activity android:name=".vaisselle.GameView"></activity>
         -->
+        <activity android:name=".course.courseActivity"></activity>
     </application>
 
 </manifest>
