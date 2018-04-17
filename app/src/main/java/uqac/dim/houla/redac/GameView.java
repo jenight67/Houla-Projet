@@ -23,8 +23,9 @@ public class GameView extends AppCompatActivity {
 
     int index;
     boolean partieEnCours;
-    String[] texteRedac = { "S", "u", "p", "e", "r", " ", "N", "i", "l", "s", " ", "!", " "};
-    //TODO : Faire un texte plus long que ce qui est cliquable par l'homme, de manière à ce que jamais personne n'arrive à voir ce qui est écrit à la fin
+    String[] texteRedac = { "A", " v", "a", " ê", "t", "r", "e", " b", "o", "n", "n", "e", " à", " s", "o", "i", "r", " d", "a", "n", "s", " l'", "s", "h", "a", "c", "k", " à", " H", "e", "c", "t", "o", "r",
+            "\nO", "u", "v", "r", "e", " l", "a", " v", "a", "l", "i", "s", "e", " p", "i", "s", " s", "o", "r", "s", " l", "e", "s", " b", "o", "u", "t", "e", "i", "l", "l", "e", "s", " d", "e", " f","o", "r","t\n",
+            "P", "i", "s", " s", "i", " t", "o", "n", " f", "o", "i", "e", " d", "é", "c", "i", "d", "e", " d'", "ê", "t", "r", "e", " m", "a", "l", "a", "d","w", ""};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
