@@ -1,5 +1,6 @@
 package uqac.dim.houla.redac;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import uqac.dim.houla.R;
 public class GameView extends AppCompatActivity {
 
     int index;
+    boolean win;
     boolean partieEnCours;
     String[] texteRedac = { "A", " v", "a", " ê", "t", "r", "e", " b", "o", "n", "n", "e", " à", " s", "o", "i", "r", " d", "a", "n", "s", " l'", "s", "h", "a", "c", "k", " à", " H", "e", "c", "t", "o", "r",
             "\nO", "u", "v", "r", "e", " l", "a", " v", "a", "l", "i", "s", "e", " p", "i", "s", " s", "o", "r", "s", " l", "e", "s", " b", "o", "u", "t", "e", "i", "l", "l", "e", "s", " d", "e", " f","o", "r","t\n",
@@ -50,6 +52,9 @@ public class GameView extends AppCompatActivity {
 
         //On met le index à 1
         index = 1;
+
+        //On met le boolean de retour de jeu à false
+        win = false;
     }
 
     public void launchGame(View v)
@@ -118,6 +123,8 @@ public class GameView extends AppCompatActivity {
 
         if (index >= 8)
         {
+            //On dit que le jeu est gagné
+            win = true;
             //On adapte le titre de fin
             titreFin.setText("Gagné !");
             //On adapte le message de fin
@@ -135,6 +142,8 @@ public class GameView extends AppCompatActivity {
         }
         else
         {
+            //On dit que le jeu est perdu
+            win = false;
             //On adapte le titre de fin
             titreFin.setText("Perdu...");
             //On adapte le message de fin
@@ -184,7 +193,9 @@ public class GameView extends AppCompatActivity {
 
     public void boutonSuivant(View v)
     {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("win", win);
+        setResult(Activity.RESULT_OK,returnIntent);
+        super.finish();
     }
 }

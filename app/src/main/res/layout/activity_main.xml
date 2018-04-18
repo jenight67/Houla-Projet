@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,137 +9,48 @@
     android:gravity="center_vertical"
     tools:context="uqac.dim.houla.MainActivity">
 
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:onClick="launchGame"
-        android:text="@string/play" />
-
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="@string/option"
-        android:layout_gravity="center"
-        android:onClick="launchOption"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Jeux" />
-
-    <RelativeLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/reveil"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:onClick="choisirJeu"
-            android:text="Eteins ton réveil" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/vue_accueil" />
 
-        <Button
-            android:id="@+id/couette"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/reveil"
-            android:onClick="choisirJeu"
-            android:text="Remonte ta couette" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteY="511dp">
 
-        <Button
-            android:id="@+id/pote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/reveil"
-            android:onClick="choisirJeu"
-            android:text="Réveille ton pote" />
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#38495C"
+                android:onClick="launchGame"
+                android:textColor="#FFFFFF"
+                android:text="@string/play"
+                android:textSize="20dp"
+                android:textStyle="normal|bold" />
 
-        <Button
-            android:id="@+id/course"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/couette"
-            android:layout_toEndOf="@+id/pote"
-            android:onClick="choisirJeu"
-            android:text="Arrive à l'heure" />
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#38495C"
+                android:textColor="#FFFFFF"
+                android:onClick="launchOption"
+                android:text="@string/option"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
 
-        <Button
-            android:id="@+id/sleep"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/pote"
-            android:onClick="choisirJeu"
-            android:text="Me vs. Sleep" />
-
-        <Button
-            android:id="@+id/redac"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/sleep"
-            android:layout_toEndOf="@+id/sleep"
-            android:onClick="choisirJeu"
-            android:text="Rédige ta rédac" />
-
-        <Button
-            android:id="@+id/motivation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/sleep"
-            android:onClick="choisirJeu"
-            android:text="Attrape ta motivation" />
-
-        <Button
-            android:id="@+id/vaisselle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/motivation"
-            android:layout_toEndOf="@+id/motivation"
-            android:onClick="choisirJeu"
-            android:text="Fais la vaisselle !" />
-
-        <Button
-            android:id="@+id/cash"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/motivation"
-            android:onClick="choisirJeu"
-            android:text="Balance du cash !" />
-
-        <Button
-            android:id="@+id/biere"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/motivation"
-            android:layout_toEndOf="@+id/cash"
-            android:onClick="choisirJeu"
-            android:text="Le meilleur jeu du monde" />
-
-        <Button
-            android:id="@+id/bourre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/cash"
-            android:onClick="choisirJeu"
-            android:text="Bourré or not ?" />
-
-        <Button
-            android:id="@+id/baston"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cash"
-            android:layout_toEndOf="@+id/bourre"
-            android:onClick="choisirJeu"
-            android:text="Ca tourne mal" />
-    </RelativeLayout>
 
 </LinearLayout>
