@@ -13,10 +13,18 @@ import android.view.WindowManager;
 import uqac.dim.houla.menu_options.OptionActivity;
 import uqac.dim.houla.reveil.GameView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity
+{
+    //Liste contenant les mini-jeux par ordre
+    public Class[] ordreJeux = {
+            uqac.dim.houla.reveil.GameView.class,
+            uqac.dim.houla.course.courseActivity.class,
+            uqac.dim.houla.redac.GameView.class
+    };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -30,19 +38,22 @@ public class MainActivity extends Activity {
         Constant.SCREEN_HEIGHT = dm.heightPixels;
 
         setContentView(R.layout.activity_main);
-
     }
 
     @Override
-    protected void onResume() {
+    protected void onResume()
+    {
         super.onResume();
+        //Afficher la vue d'accueil
         setContentView(R.layout.activity_main);
-
-
     }
 
-    public void launchGame(View v){
-
+    //Lancemenent de tous les minijeux à la suite
+    public void launchGame(View v)
+    {
+        //Lancement du premier minijeu
+        Intent intent = new Intent(this, ordreJeux[0]);
+        startActivityForResult(intent, 0);
     }
 
     //Au clic sur le bouton de choix de jeu
@@ -89,7 +100,7 @@ public class MainActivity extends Activity {
                 case R.id.reveil:
                     Log.i("MainActivity", "Clic sur réveil");
                     intent = new Intent(this, GameView.class);
-                    startActivity(intent);
+                    startActivityForResult(intent, 2);
                     break;
                 case R.id.sleep:
 
@@ -103,34 +114,48 @@ public class MainActivity extends Activity {
         }
     }
 
-    public void launchOption(View v){
+    public void launchOption(View v)
+    {
         Intent intent = new Intent(this, OptionActivity.class);
         startActivity(intent);
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
         boolean result = true;
-        if(requestCode == 1 && resultCode == RESULT_OK){
+
+        //if(requestCode == 1 && resultCode == RESULT_OK){
+        if(resultCode == RESULT_OK)
+        {
             result = data.getBooleanExtra("win",true);
         }
 
-        if (result){
+        //Si le min-jeu a réussi, passer au suivant, sinon arrêter la partie
+        if (result)
+        {
+            Log.i("MainActivity", "Mini-jeu réussi !");
             nextMiniGame(requestCode);
-        } else {
+        }
+        else
+        {
+            Log.i("MainActivity", "Mini-jeu perdu...");
             endGame();
         }
     }
 
-    public void nextMiniGame(int nbMinijeu){
-        //Prochain mini jeu
-        Log.i("MainActivity", "Lancement de réveil");
-        Intent intent = new Intent(this, uqac.dim.houla.reveil.GameView.class);
-        startActivity(intent);
-
+    //Lancement du minijeu suivant
+    public void nextMiniGame(int nbMinijeu)
+    {
+        Log.i("MainActivity", "Lancement du mini-jeu suivant !");
+        //Incrément du comtpeur de minijeu
+        nbMinijeu++;
+        Intent intent = new Intent(this, ordreJeux[nbMinijeu]);
+        startActivityForResult(intent, nbMinijeu);
     }
 
-    public void endGame(){
+    public void endGame()
+    {
         //Afficher Score
     }
 }

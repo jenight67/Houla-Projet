@@ -1,5 +1,6 @@
 package uqac.dim.houla.reveil;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.constraint.ConstraintLayout;
@@ -25,6 +26,7 @@ public class GameView extends AppCompatActivity {
 
     int compteur;
     boolean partieEnCours;
+    boolean win;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -39,6 +41,9 @@ public class GameView extends AppCompatActivity {
         LinearLayout layoutFin = findViewById(R.id.layoutFin);
         //On masque le layout de fin
         layoutFin.setAlpha(0.0f);
+
+        //On met le résultat de jeu à faux
+        win = false;
     }
 
     public void launchGame(View v)
@@ -107,6 +112,8 @@ public class GameView extends AppCompatActivity {
 
         if (compteur >= 8)
         {
+            //On met le résultat de jeu à true
+            win = true;
             //On adapte le titre de fin
             titreFin.setText("Gagné !");
             //On adapte le message de fin
@@ -124,6 +131,8 @@ public class GameView extends AppCompatActivity {
         }
         else
         {
+            //On met le résultat de jeu à faux
+            win = false;
             //On adapte le titre de fin
             titreFin.setText("Perdu...");
             //On adapte le message de fin
@@ -174,7 +183,9 @@ public class GameView extends AppCompatActivity {
 
     public void boutonSuivant(View v)
     {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("win", win);
+        setResult(Activity.RESULT_OK,returnIntent);
+        super.finish();
     }
 }
