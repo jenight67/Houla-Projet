@@ -123,7 +123,7 @@ public class MainActivity extends Activity {
     public void nextMiniGame(int nbMinijeu){
         //Prochain mini jeu
         Log.i("MainActivity", "Lancement de réveil");
-        Intent intent = new Intent(this, GameView.class);
+        Intent intent = new Intent(this, uqac.dim.houla.reveil.GameView.class);
         startActivity(intent);
 
     }

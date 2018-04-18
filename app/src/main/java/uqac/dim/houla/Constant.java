@@ -1,5 +1,7 @@
 package uqac.dim.houla;
 
+import android.content.Context;
+
 import java.util.Random;
 
 /**
@@ -9,6 +11,8 @@ import java.util.Random;
 public class Constant {
     public static int SCREEN_WIDTH;
     public static int SCREEN_HEIGHT;
+
+    public static Context CURRENT_CONTEXT;
 
     public static int randomInt(int borneInferieure, int borneSuperieure)
     {
