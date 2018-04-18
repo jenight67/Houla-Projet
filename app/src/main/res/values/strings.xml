@@ -5,4 +5,5 @@
     <string name="reveil">reveil</string>
     <string name="regle_reveil">Dans ce jeu, tu vas devoir appuyer 8 fois sur ton réveil pour le faire taire. Attention, il risque de se déplacer ! ....</string>
     <string name="regle_pote">Dans ce jeu, tu vas devoir réveiller ton pote, secoue-le !</string>
+    <string name="redac_titre">Rédige ta rédac !</string>
 </resources>
