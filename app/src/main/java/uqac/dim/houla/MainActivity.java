@@ -2,7 +2,6 @@ package uqac.dim.houla;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -10,16 +9,21 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import java.util.Hashtable;
+
 import uqac.dim.houla.menu_options.OptionActivity;
 import uqac.dim.houla.reveil.GameView;
 
 public class MainActivity extends Activity
 {
+    //Tableau contenant les résultats des jeux
+    Hashtable resultatsJeux = new Hashtable();
+
     //Liste contenant les mini-jeux par ordre
-    public Class[] ordreJeux = {
-            uqac.dim.houla.reveil.GameView.class,
-            uqac.dim.houla.course.courseActivity.class,
-            uqac.dim.houla.redac.GameView.class
+    Class[] ordreJeux = {
+        uqac.dim.houla.reveil.GameView.class,
+        uqac.dim.houla.course.courseActivity.class,
+        uqac.dim.houla.redac.GameView.class
     };
 
     @Override
@@ -80,7 +84,6 @@ public class MainActivity extends Activity
 
                     break;
                 case R.id.course:
-                    Log.i("MainActivity", "Clic sur course");
                     intent = new Intent(this, uqac.dim.houla.course.courseActivity.class);
                     startActivityForResult(intent,1); // Le request code est le numero du minijeu dans le futur tableau
                     break;
@@ -88,17 +91,14 @@ public class MainActivity extends Activity
 
                     break;
                 case R.id.pote:
-                    Log.i("MainActivity", "Clic sur pote");
                     intent = new Intent(this, uqac.dim.houla.pote.GameView.class);
                     startActivity(intent);
                     break;
                 case R.id.redac:
-                    Log.i("MainActivity", "Clic sur redac");
                     intent = new Intent(this, uqac.dim.houla.redac.GameView.class);
                     startActivity(intent);
                     break;
                 case R.id.reveil:
-                    Log.i("MainActivity", "Clic sur réveil");
                     intent = new Intent(this, GameView.class);
                     startActivityForResult(intent, 2);
                     break;
@@ -130,6 +130,11 @@ public class MainActivity extends Activity
         {
             result = data.getBooleanExtra("win",true);
         }
+
+        //On met le résultat du minjeu dans la table des résultats
+        resultatsJeux.put(ordreJeux[requestCode], result);
+        //On affiche le résultat du minijeu
+        Log.i("Résultat minijeu :", resultatsJeux.get(ordreJeux[requestCode]) + "");
 
         //Si le min-jeu a réussi, passer au suivant, sinon arrêter la partie
         if (result)
