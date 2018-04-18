@@ -26,6 +26,9 @@ public class MainActivity extends Activity
         uqac.dim.houla.redac.GameView.class
     };
 
+    //Score du joueur
+    private int score = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -86,6 +89,7 @@ public class MainActivity extends Activity
         if (result)
         {
             Log.i("MainActivity", "Mini-jeu réussi !");
+            score++;
             nextMiniGame(requestCode);
         }
         else
@@ -99,7 +103,7 @@ public class MainActivity extends Activity
     public void nextMiniGame(int nbMinijeu)
     {
         Log.i("MainActivity", "Lancement du mini-jeu suivant !");
-        //Incrément du comtpeur de minijeu
+        //Incrément du compteur de minijeu
         nbMinijeu++;
         Intent intent = new Intent(this, ordreJeux[nbMinijeu]);
         startActivityForResult(intent, nbMinijeu);
@@ -107,6 +111,9 @@ public class MainActivity extends Activity
 
     public void endGame()
     {
+        Log.i("MainActivity", "Debut EndGame");
         //Afficher Score
+        Intent intent = new Intent(this, ScoreActivity.class);
+        intent.putExtra("score",score);
     }
 }
