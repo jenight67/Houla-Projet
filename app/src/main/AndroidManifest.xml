@@ -32,12 +32,11 @@
         <activity
             android:name=".pote.GameView"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".redac.GameView"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".course.courseActivity"></activity>
+        <activity android:name=".course.courseActivity" />
+        <activity android:name=".ScoreActivity"></activity>
     </application>
 
 </manifest>
