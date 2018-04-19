@@ -6,7 +6,10 @@ import android.os.CountDownTimer;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -32,6 +35,9 @@ public class GameView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.reveil_jeu);
 
         //On met le compteur à 0
@@ -162,6 +168,7 @@ public class GameView extends AppCompatActivity {
 
     public void clicReveil(View v)
     {
+        Log.i("---", "clic");
         if (partieEnCours)
         {
             //On récupère l'instance du bouton
@@ -183,9 +190,16 @@ public class GameView extends AppCompatActivity {
 
     public void boutonSuivant(View v)
     {
-        Intent returnIntent = new Intent();
-        returnIntent.putExtra("win", win);
-        setResult(Activity.RESULT_OK,returnIntent);
-        super.finish();
+        if (!partieEnCours)
+        {
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("win", win);
+            setResult(Activity.RESULT_OK,returnIntent);
+            super.finish();
+        }
+        else
+        {
+            clicReveil(v);
+        }
     }
 }

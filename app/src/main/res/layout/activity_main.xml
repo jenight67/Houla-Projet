@@ -32,10 +32,10 @@
                 android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="#38495C"
+                android:backgroundTint="@color/bleu_sombre"
                 android:onClick="launchGame"
-                android:textColor="#FFFFFF"
                 android:text="@string/play"
+                android:textColor="@color/blanc"
                 android:textSize="20dp"
                 android:textStyle="normal|bold" />
 
@@ -44,10 +44,10 @@
                 android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="#38495C"
-                android:textColor="#FFFFFF"
+                android:backgroundTint="@color/bleu_sombre"
                 android:onClick="launchOption"
                 android:text="@string/option"
+                android:textColor="@color/blanc"
                 android:textSize="18dp" />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>

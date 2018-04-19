@@ -10,68 +10,87 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone"
-        android:weightSum="100">
+        android:visibility="gone">
 
-
-        <ProgressBar
-            android:id="@+id/progressionJeu"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:background="@android:color/transparent"
-            android:indeterminate="false"
-            android:max="100"
-            android:maxHeight="20sp"
-            android:minHeight="20sp"
-            android:progress="100"
-            android:progressBackgroundTint="@android:color/transparent"
-            android:progressTint="@color/colorPrimaryDark" />
-
-        <!-- TODO customiser avec https://android-dev-examples.blogspot.ca/2014/09/android-custom-horizontal-progressbar.html -->
-
-        <TextView
-            android:id="@+id/timer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:text="10:0"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="50sp" />
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/reveilLayout"
             android:layout_width="match_parent"
-            android:layout_height="411dp"
-            android:layout_weight="75"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton"
-            app:layout_constraintStart_toStartOf="@+id/imageButton">
+            android:layout_height="match_parent"
+            android:layout_weight="5">
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="56dp"
-                android:layout_height="61dp"
-                android:contentDescription="@string/reveil"
-                android:onClick="clicReveil"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_editor_absoluteX="0dp"
-                app:layout_editor_absoluteY="0dp"
-                app:srcCompat="@drawable/reveil" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="100">
+
+                <ProgressBar
+                    android:id="@+id/progressionJeu"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_weight="5"
+                    android:background="@color/blanc"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:maxHeight="20sp"
+                    android:minHeight="20sp"
+                    android:progress="100"
+                    android:progressBackgroundTint="@color/blanc"
+                    android:progressTint="@color/bleu_sombre" />
+
+                <TextView
+                    android:id="@+id/timer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:paddingTop="10dp"
+                    android:text="10:0"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="50sp" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/reveilLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="85"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    app:layout_constraintEnd_toStartOf="@+id/imageButton"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton">
+
+                    <ImageButton
+                        android:id="@+id/imageButton"
+                        android:layout_width="56dp"
+                        android:layout_height="61dp"
+                        android:background="@color/transparent"
+                        android:contentDescription="@string/reveil"
+                        android:onClick="clicReveil"
+                        android:padding="5dp"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_editor_absoluteX="0dp"
+                        app:layout_editor_absoluteY="0dp"
+                        app:srcCompat="@drawable/reveil" />
+                </android.support.constraint.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/compteur"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_weight="5"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </android.support.constraint.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/compteur"
-            android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:layout_weight="10"
-            android:text="0"
-            android:textAlignment="center"
-            android:textColor="@android:color/holo_red_light"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+        <!-- TODO customiser avec https://android-dev-examples.blogspot.ca/2014/09/android-custom-horizontal-progressbar.html -->
 
     </LinearLayout>
 
@@ -125,41 +144,49 @@
                 android:text="La suite please !" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/layoutRegles"
+    <LinearLayout
+        android:id="@+id/layoutRegles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/texteRegle1"
+            <ImageView
+                android:id="@+id/imageView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="200sp"
-                android:text="Éteins ton réveil"
-                android:textAlignment="center"
-                android:textColor="@android:color/background_dark"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/reveil_regles" />
 
-            <TextView
-                android:id="@+id/texteRegle2"
-                android:layout_width="300sp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40sp"
-                android:backgroundTint="@android:color/background_light"
-                android:text="@string/regle_reveil"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/buttonGo"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="50sp"
-                android:onClick="launchGame"
-                android:text="Go !" />
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="10">
+
+                <Button
+                    android:id="@+id/buttonGo"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="100dp"
+                    android:layout_marginTop="240dp"
+                    android:backgroundTint="@color/bleu_sombre"
+                    android:onClick="launchGame"
+                    android:text="Go !"
+                    android:textColor="@color/blanc"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="50dp"
+                    tools:layout_editor_absoluteY="652dp" />
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
 
 
 
