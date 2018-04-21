@@ -39,7 +39,7 @@ public class Obstacle implements GameObject {
         idle = new Animation(idleBit,1f);
 
         // 0 = idle
-        am = new AnimationManager(new Animation[]{idle});
+        //am = new AnimationManager(new Animation[]{idle});
     }
 
     public boolean playerCollide(Player player){
@@ -48,16 +48,17 @@ public class Obstacle implements GameObject {
 
     @Override
     public void draw(Canvas canvas) {
-        //Paint paint = new Paint();
-        //paint.setColor(color);
+        Paint paint = new Paint();
+        paint.setColor(color);
 
-        //canvas.drawRect(rectangle, paint);
+        canvas.drawRect(rectangle, paint);
 
-        am.draw(canvas, rectangle);
+        //am.draw(canvas, rectangle);
     }
 
     @Override
     public void update() {
+        //am.update();
     }
 
 
@@ -68,8 +69,8 @@ public class Obstacle implements GameObject {
                 , point.y + rectangle.height()/2);
 
         //Il n'y a qu'une seule animation.
-        am.playIndex(0);
-        am.update();
+        //am.playIndex(0);
+        //am.update();
     }
 
     public void incrementY(float y){
