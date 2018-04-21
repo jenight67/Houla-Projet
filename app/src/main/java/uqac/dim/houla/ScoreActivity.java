@@ -19,7 +19,7 @@ public class ScoreActivity extends AppCompatActivity {
         Log.i("score",score + "");
         //On récupère le champ du score et on l'affiche
         TextView textView = findViewById(R.id.score);
-        textView.setText("Votre score : " + String.valueOf(score));
+        textView.setText("Votre score est de " + String.valueOf(score) + " points");
 
         //On récupère l'imageView
         ImageView fond = findViewById(R.id.fond_score);
@@ -27,6 +27,11 @@ public class ScoreActivity extends AppCompatActivity {
         if (score < 2)
         {
             //On affiche la vue de perte
+            fond.setImageResource(R.drawable.score_perdu_background);
+        }
+        else
+        {
+            //On affiche la vue de victore
             fond.setImageResource(R.drawable.score_gagne_background);
         }
     }
