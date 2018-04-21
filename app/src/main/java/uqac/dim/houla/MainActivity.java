@@ -115,5 +115,6 @@ public class MainActivity extends Activity
         //Afficher Score
         Intent intent = new Intent(this, ScoreActivity.class);
         intent.putExtra("score",score);
+        startActivity(intent);
     }
 }
