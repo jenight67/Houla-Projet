@@ -50,11 +50,14 @@ public class GameView extends AppCompatActivity {
 
         //On met le résultat de jeu à faux
         win = false;
+
+        ImageView img = findViewById(R.id.imageView4);
+        //img.setImageResource(R.drawable.reveil_regles);
     }
 
     public void launchGame(View v)
     {
-        //Récupèreation du layout des règles et suppression à l'écran
+        //Récupéreation du layout des règles et suppression à l'écran
         LinearLayout layoutRegles = findViewById(R.id.layoutRegles);
         layoutRegles.setVisibility(View.GONE);
 
@@ -183,8 +186,8 @@ public class GameView extends AppCompatActivity {
             texteCompteur.setText(compteur + "");
 
             //On change la position du bouton avec un nombre aléatoire inférieur à la taille du layout
-            boutonReveil.setX(Constant.randomInt(0, Constant.SCREEN_WIDTH - boutonReveil.getWidth()));
-            boutonReveil.setY(Constant.randomInt((int) layoutReveil.getX(), (int) (layoutReveil.getX() + layoutReveil.getHeight() - boutonReveil.getHeight())));
+            boutonReveil.setX(Constant.randomInt(0, (int) (layoutReveil.getWidth() - boutonReveil.getWidth())));
+            boutonReveil.setY(Constant.randomInt(0, (int) (layoutReveil.getHeight() - boutonReveil.getHeight())));
         }
     }
 

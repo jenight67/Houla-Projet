@@ -10,13 +10,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="visible">
 
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="5">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/reveil_jeu_background" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -54,6 +62,8 @@
                     android:id="@+id/reveilLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
                     android:layout_weight="85"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
@@ -68,12 +78,12 @@
                         android:contentDescription="@string/reveil"
                         android:onClick="clicReveil"
                         android:padding="5dp"
-                        android:scaleType="fitCenter"
+                        android:scaleType="centerCrop"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_editor_absoluteX="0dp"
                         app:layout_editor_absoluteY="0dp"
-                        app:srcCompat="@drawable/reveil" />
+                        app:srcCompat="@drawable/reveil_jeu_asset1" />
                 </android.support.constraint.ConstraintLayout>
 
                 <TextView
@@ -99,14 +109,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="0"
-            android:src="@drawable/confettis2" />
+            android:src="@drawable/reveil_gagne_background" />
 
-        <ImageView
-            android:id="@+id/imageTriste"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:alpha="0"
-            android:src="@drawable/image_triste" />
+    <ImageView
+        android:id="@+id/imageTriste"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:src="@drawable/reveil_perdu_background" />
 
         <LinearLayout
             android:id="@+id/layoutFin"
@@ -158,9 +168,8 @@
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/reveil_regles" />
+                android:layout_height="match_parent"
+                android:background="@color/blanc" />
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -79,14 +79,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0"
-        android:src="@drawable/confettis2" />
+        android:src="@drawable/reveil_gagne_background" />
 
     <ImageView
         android:id="@+id/imageTriste"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0"
-        android:src="@drawable/image_triste" />
+        android:src="@drawable/reveil_perdu_background" />
 
     <LinearLayout
         android:id="@+id/layoutFin"
