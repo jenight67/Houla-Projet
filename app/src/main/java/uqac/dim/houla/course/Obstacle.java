@@ -35,6 +35,11 @@ public class Obstacle implements GameObject {
         idleBit[0] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.course_player_idle0);
         idleBit[1] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.course_player_idle1);
         idleBit[2] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.course_player_idle2);
+
+        idle = new Animation(idleBit,1f);
+
+        // 0 = idle
+        am = new AnimationManager(new Animation[]{idle});
     }
 
     public boolean playerCollide(Player player){
@@ -43,10 +48,12 @@ public class Obstacle implements GameObject {
 
     @Override
     public void draw(Canvas canvas) {
-        Paint paint = new Paint();
-        paint.setColor(color);
+        //Paint paint = new Paint();
+        //paint.setColor(color);
 
-        canvas.drawRect(rectangle, paint);
+        //canvas.drawRect(rectangle, paint);
+
+        am.draw(canvas, rectangle);
     }
 
     @Override
@@ -59,6 +66,10 @@ public class Obstacle implements GameObject {
                 , point.y - rectangle.height()/2
                 , point.x + rectangle.width()/2
                 , point.y + rectangle.height()/2);
+
+        //Il n'y a qu'une seule animation.
+        am.playIndex(0);
+        am.update();
     }
 
     public void incrementY(float y){
