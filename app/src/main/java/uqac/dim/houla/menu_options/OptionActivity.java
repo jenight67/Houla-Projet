@@ -20,9 +20,6 @@ public class OptionActivity extends Activity
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_option);
-
-        ImageView fond = findViewById(R.id.imageFond2);
-        fond.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.options_background, 10000, 10000));
     }
 
     @Override
@@ -71,5 +68,10 @@ public class OptionActivity extends Activity
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void retour(View v)
+    {
+        super.finish();
     }
 }

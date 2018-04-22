@@ -13,81 +13,74 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageFond2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/options_descrpition_image_fond"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
             android:id="@+id/imageFondoptions"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="false"
-            android:cropToPadding="false"
             android:contentDescription="@string/options_descrpition_image_fond"
+            android:cropToPadding="false"
             android:scaleType="centerCrop"
+            android:src="@drawable/options_background"
             android:visibility="visible" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_marginEnd="100dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="150dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/pote"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/reveil"
                 android:onClick="choisirJeu"
-                android:text="@string/pote_titre" />
-
-            <Button
-                android:id="@+id/redac"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="choisirJeu"
-                android:text="@string/redac_titre" />
+                style="@style/boutonSombrePetit"
+                android:text="@string/reveil_titre" />
 
             <Button
                 android:id="@+id/couette"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/boutonSombrePetit"
                 android:onClick="choisirJeu"
                 android:text="@string/couette_titre" />
 
             <Button
-                android:id="@+id/bourre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/pote"
+                style="@style/boutonSombrePetit"
                 android:onClick="choisirJeu"
-                android:text="@string/bourre_titre" />
+                android:text="@string/pote_titre" />
 
             <Button
-                android:id="@+id/reveil"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/course"
                 android:onClick="choisirJeu"
-                android:text="@string/reveil_titre" />
+                style="@style/boutonSombrePetit"
+                android:text="@string/heure_titre" />
+
+            <Button
+                android:id="@+id/redac"
+                style="@style/boutonSombrePetit"
+                android:onClick="choisirJeu"
+                android:text="@string/redac_titre" />
 
             <Button
                 android:id="@+id/cash"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/boutonSombrePetit"
                 android:onClick="choisirJeu"
                 android:text="@string/cash_titre" />
 
             <Button
-                android:id="@+id/course"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/bourre"
+                style="@style/boutonSombrePetit"
                 android:onClick="choisirJeu"
-                android:text="@string/heure_titre" />
+                android:text="@string/bourre_titre" />
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/boutonSombrePetit"
+                android:layout_marginTop="10dp"
+                android:onClick="retour"
                 android:text="@string/retour"
                 tools:layout_editor_absoluteX="40dp"
                 tools:layout_editor_absoluteY="150dp" />
