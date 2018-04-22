@@ -20,7 +20,6 @@
             android:contentDescription="@string/options_descrpition_image_fond"
             android:cropToPadding="false"
             android:scaleType="centerCrop"
-            android:src="@drawable/options_background"
             android:visibility="visible" />
 
         <LinearLayout
@@ -82,6 +81,7 @@
                 android:layout_marginTop="10dp"
                 android:onClick="retour"
                 android:text="@string/retour"
+                android:textStyle="bold"
                 tools:layout_editor_absoluteX="40dp"
                 tools:layout_editor_absoluteY="150dp" />
         </LinearLayout>

@@ -1,24 +1,27 @@
 package uqac.dim.houla.menu_options;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
-
 
 import uqac.dim.houla.R;
 import uqac.dim.houla.reveil.GameView;
 
 import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
 
-public class OptionActivity extends Activity
+public class OptionActivity extends AppCompatActivity
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_option);
     }
 
@@ -28,6 +31,9 @@ public class OptionActivity extends Activity
         super.onResume();
         //Afficher la vue d'options
         setContentView(R.layout.activity_option);
+        //On affiche l'image de fond
+        ImageView image_accueil = findViewById(R.id.imageFondoptions);
+        image_accueil.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.options_background, 500, 500));
     }
 
     //Au clic sur le bouton de choix de jeu

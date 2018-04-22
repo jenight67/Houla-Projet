@@ -8,10 +8,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import java.util.Hashtable;
 
 import uqac.dim.houla.menu_options.OptionActivity;
+
+import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
 
 public class MainActivity extends Activity
 {
@@ -59,6 +62,9 @@ public class MainActivity extends Activity
         super.onResume();
         //Afficher la vue d'accueil
         setContentView(R.layout.activity_main);
+        //On affiche l'image de fond
+        ImageView image_accueil = findViewById(R.id.imageAccueil);
+        image_accueil.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.accueil_vue_background, 500, 500));
     }
 
     //Lancemenent de tous les minijeux à la suite

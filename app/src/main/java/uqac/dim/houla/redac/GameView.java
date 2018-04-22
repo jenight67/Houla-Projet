@@ -22,8 +22,8 @@ import uqac.dim.houla.R;
 
 import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
 
-public class GameView extends AppCompatActivity {
-
+public class GameView extends AppCompatActivity
+{
     int index;
     boolean win;
     boolean partieEnCours;

@@ -3,13 +3,13 @@ package uqac.dim.houla;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 //Cette classe permet d'afficher des bitmaps
 public class ShowBitmap
 {
-    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
-                                                         int reqWidth, int reqHeight) {
-
+    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId, int reqWidth, int reqHeight)
+    {
         // First decode with inJustDecodeBounds=true to check dimensions
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
@@ -42,7 +42,6 @@ public class ShowBitmap
                 inSampleSize *= 2;
             }
         }
-
         return inSampleSize;
     }
 }
