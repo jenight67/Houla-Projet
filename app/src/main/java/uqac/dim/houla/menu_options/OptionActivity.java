@@ -3,7 +3,6 @@ package uqac.dim.houla.menu_options;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -18,7 +17,6 @@ public class OptionActivity extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        Log.i("OptionActivity", "on y est");
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_option);
@@ -57,9 +55,6 @@ public class OptionActivity extends Activity
                     intent = new Intent(this, uqac.dim.houla.course.courseActivity.class);
                     startActivity(intent);
                     break;
-                case R.id.motivation:
-
-                    break;
                 case R.id.pote:
                     intent = new Intent(this, uqac.dim.houla.pote.GameView.class);
                     startActivity(intent);
@@ -71,9 +66,6 @@ public class OptionActivity extends Activity
                 case R.id.reveil:
                     intent = new Intent(this, GameView.class);
                     startActivity(intent);
-                    break;
-                case R.id.sleep:
-
                     break;
             }
         } catch (Exception e) {

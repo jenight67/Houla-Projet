@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="uqac.dim.houla.MainActivity">
+    tools:context="uqac.dim.houla.menu_options.OptionActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            tools:layout_editor_absoluteY="148dp" />
+            android:contentDescription="@string/options_descrpition_image_fond"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageFondoptions"
@@ -25,6 +26,7 @@
             android:layout_height="match_parent"
             android:adjustViewBounds="false"
             android:cropToPadding="false"
+            android:contentDescription="@string/options_descrpition_image_fond"
             android:scaleType="centerCrop"
             android:visibility="visible" />
 
@@ -37,70 +39,56 @@
                 android:id="@+id/pote"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/reveil"
                 android:onClick="choisirJeu"
-                android:text="Réveille ton pote" />
+                android:text="@string/pote_titre" />
 
             <Button
                 android:id="@+id/redac"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/sleep"
-                android:layout_toEndOf="@+id/sleep"
                 android:onClick="choisirJeu"
-                android:text="Rédige ta rédac" />
+                android:text="@string/redac_titre" />
 
             <Button
                 android:id="@+id/couette"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/reveil"
                 android:onClick="choisirJeu"
-                android:text="Remonte ta couette" />
+                android:text="@string/couette_titre" />
 
             <Button
                 android:id="@+id/bourre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/cash"
                 android:onClick="choisirJeu"
-                android:text="Bourré or not ?" />
+                android:text="@string/bourre_titre" />
 
             <Button
                 android:id="@+id/reveil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
                 android:onClick="choisirJeu"
-                android:text="Eteins ton réveil" />
+                android:text="@string/reveil_titre" />
 
             <Button
                 android:id="@+id/cash"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/motivation"
                 android:onClick="choisirJeu"
-                android:text="Balance du cash !" />
+                android:text="@string/cash_titre" />
 
             <Button
                 android:id="@+id/course"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/couette"
-                android:layout_toEndOf="@+id/pote"
                 android:onClick="choisirJeu"
-                android:text="Arrive à l'heure" />
+                android:text="@string/heure_titre" />
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Retour"
+                android:text="@string/retour"
                 tools:layout_editor_absoluteX="40dp"
                 tools:layout_editor_absoluteY="150dp" />
         </LinearLayout>

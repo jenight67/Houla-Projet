@@ -29,7 +29,6 @@ public class GameView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cash_jeu);
-        Log.i("hello", "ony est");
 
         VideoView vid = findViewById(R.id.videoView);
 
@@ -85,7 +84,6 @@ public class GameView extends AppCompatActivity {
         //On atténue la vue du jeu
         layoutGeneral.startAnimation(attenuation);
 
-
         //On récupère le layout de fin
         LinearLayout layoutFin = findViewById(R.id.layoutFin);
         layoutFin.setAlpha(1.0f);
@@ -101,7 +99,6 @@ public class GameView extends AppCompatActivity {
 
         //On récupère le message de fin
         TextView messageFin = findViewById(R.id.texteFin2);
-
     }
 
     public void boutonSuivant(View v)

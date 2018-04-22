@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        tools:layout_editor_absoluteY="148dp" />
+        android:contentDescription="@string/redac_description_image_accueil"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/layoutGeneral"
@@ -36,14 +37,13 @@
             android:progressBackgroundTint="@color/blanc"
             android:progressTint="@color/bleu_sombre" />
 
-        <!-- TODO customiser avec https://android-dev-examples.blogspot.ca/2014/09/android-custom-horizontal-progressbar.html -->
 
         <TextView
             android:id="@+id/timer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="10"
-            android:text="10:0"
+            android:text="@string/redac_texte_compteur"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="50sp" />
@@ -70,12 +70,10 @@
             android:id="@+id/boutonRedac"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:layout_marginLeft="100sp"
             android:layout_marginRight="100sp"
             android:layout_weight="5"
             android:onClick="clicClavier"
-            android:text=""
             android:textAllCaps="false"
             android:textSize="24sp"
             tools:layout_editor_absoluteY="502dp" />
@@ -87,6 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0"
+        android:contentDescription="@string/redac_image_victoire"
         android:scaleType="centerCrop" />
 
     <ImageView
@@ -94,6 +93,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0"
+        android:contentDescription="@string/redac_description_defaite"
         android:scaleType="centerCrop" />
 
     <LinearLayout
@@ -107,7 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="200sp"
-            android:text="Gagné !"
+            android:text="@string/redac_texte_victoire"
             android:textAlignment="center"
             android:textColor="@android:color/holo_green_dark"
             android:textSize="50sp"
@@ -117,9 +117,9 @@
             android:id="@+id/texteFin2"
             android:layout_width="300sp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40sp"
+            android:layout_marginStart="50sp"
             android:backgroundTint="@android:color/background_light"
-            android:text="Bravo, tu as réussi à écrire ta rédaction dans les temps !"
+            android:text="@string/redac_message_victoire"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
@@ -133,7 +133,7 @@
             android:layout_marginTop="50dp"
             android:backgroundTint="@color/bleu_sombre"
             android:onClick="boutonSuivant"
-            android:text="La suite please !"
+            android:text="@string/redac_texte_suite"
             android:textColor="@color/blanc"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="50dp"
@@ -156,7 +156,7 @@
             android:layout_marginTop="240dp"
             android:backgroundTint="@color/bleu_sombre"
             android:onClick="launchGame"
-            android:text="Go !"
+            android:text="@string/redac_texte_go"
             android:textColor="@color/blanc"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="50dp"

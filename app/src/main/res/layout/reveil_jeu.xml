@@ -15,7 +15,7 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="5">
 
             <ImageView
@@ -23,6 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
+                android:contentDescription="@string/reveil_description_image_jeu"
                 android:scaleType="centerCrop" />
 
             <LinearLayout
@@ -52,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
                     android:paddingTop="10dp"
-                    android:text="10:0"
+                    android:text="@string/reveil_texte_compteur"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="50sp" />
@@ -90,7 +91,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:layout_weight="5"
-                    android:text="0"
+                    android:text="@string/reveil_texte_fin_jeu"
                     android:textAlignment="center"
                     android:textColor="@android:color/holo_red_light"
                     android:textSize="30sp"
@@ -99,8 +100,6 @@
             </LinearLayout>
         </android.support.constraint.ConstraintLayout>
 
-        <!-- TODO customiser avec https://android-dev-examples.blogspot.ca/2014/09/android-custom-horizontal-progressbar.html -->
-
     </LinearLayout>
 
     <ImageView
@@ -108,6 +107,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0"
+        android:contentDescription="@string/reveil_desciption_image_victoire"
         android:scaleType="centerCrop" />
 
     <ImageView
@@ -115,6 +115,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0"
+        android:contentDescription="@string/reveil_description_image_defaite"
         android:scaleType="centerCrop" />
 
         <LinearLayout
@@ -128,7 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="200sp"
-                android:text="Gagné !"
+                android:text="@string/reveil_texte_victoire"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="50sp"
@@ -138,9 +139,9 @@
                 android:id="@+id/texteFin2"
                 android:layout_width="300sp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40sp"
+                android:layout_marginStart="50sp"
                 android:backgroundTint="@android:color/background_light"
-                android:text="Bravo, tu as réussi à éteindre 7 fois ton réveil ! Tu peux aller en cours en toute tranquilité !"
+                android:text="@string/reveil_message_victoire"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
@@ -154,7 +155,7 @@
                 android:layout_marginTop="50dp"
                 android:backgroundTint="@color/bleu_sombre"
                 android:onClick="boutonSuivant"
-                android:text="La suite please !"
+                android:text="@string/reveil_message_suite"
                 android:textColor="@color/blanc"
                 android:textSize="20sp"
                 tools:layout_editor_absoluteX="50dp"
@@ -177,6 +178,7 @@
                 android:id="@+id/imageAccueil"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/reveil_description_image_accueil"
                 android:scaleType="centerCrop" />
 
             <LinearLayout
@@ -194,7 +196,7 @@
                     android:layout_marginTop="240dp"
                     android:backgroundTint="@color/bleu_sombre"
                     android:onClick="launchGame"
-                    android:text="Go !"
+                    android:text="@string/reveil_texte_go"
                     android:textColor="@color/blanc"
                     android:textSize="20sp"
                     tools:layout_editor_absoluteX="50dp"

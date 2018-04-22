@@ -1,5 +1,6 @@
 package uqac.dim.houla.redac;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.CountDownTimer;
@@ -17,7 +18,6 @@ import android.widget.TextView;
 
 import java.util.concurrent.TimeUnit;
 
-import uqac.dim.houla.MainActivity;
 import uqac.dim.houla.R;
 
 import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
@@ -95,7 +95,7 @@ public class GameView extends AppCompatActivity {
 
             public void onFinish() {
                 endGame();
-                texteTimer.setText("00:0");
+                texteTimer.setText(R.string.redac_texte_compteur_fin);
             }
         }.start();
     }
@@ -137,9 +137,10 @@ public class GameView extends AppCompatActivity {
             //On dit que le jeu est gagné
             win = true;
             //On adapte le titre de fin
-            titreFin.setText("Gagné !");
+            titreFin.setText(R.string.redac_texte_victoire);
             //On adapte le message de fin
-            messageFin.setText("Bravo, tu as écrit " + index + " caractères ! Tu mérite de continuer tes études !");
+            String message = getString(R.string.reveil_message_victoire_1) + index + getString(R.string.redac_message_victoire_2);
+            messageFin.setText(message);
             //On récupère l'instance de l'image des confettis
             ImageView imageConfettis = findViewById(R.id.imageConfettis);
             imageConfettis.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reveil_gagne_background, 500, 500));
@@ -157,9 +158,10 @@ public class GameView extends AppCompatActivity {
             //On dit que le jeu est perdu
             win = false;
             //On adapte le titre de fin
-            titreFin.setText("Perdu...");
+            titreFin.setText(R.string.redac_texte_defaite);
             //On adapte le message de fin
-            messageFin.setText("Zut, tu n'as réussi à écrire que " + index + " caractères, dommage, tu n'auras pas ton semestre !");
+            String message = getString(R.string.redac_message_defaite_1) + index + getString(R.string.redac_message_defaite_2);
+            messageFin.setText(message);
             titreFin.setTextColor(getResources().getColor(R.color.red));
             //On récupère l'instance de l'image triste
             ImageView imageTriste = findViewById(R.id.imageTriste);
@@ -178,7 +180,7 @@ public class GameView extends AppCompatActivity {
     //Créé un format de temps
     private String TimeFormatter(long milliSeconds) {
 
-        String ms = String.format("%02d:%02d",
+        @SuppressLint("DefaultLocale") String ms = String.format("%02d:%02d",
                 TimeUnit.MILLISECONDS.toSeconds(milliSeconds) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(milliSeconds)),
                 TimeUnit.MILLISECONDS.toMillis(milliSeconds) - TimeUnit.SECONDS.toMillis(TimeUnit.MILLISECONDS.toSeconds(milliSeconds)));
         return ms;
@@ -197,7 +199,8 @@ public class GameView extends AppCompatActivity {
             //index++;
 
             //On affiche le caractère supplémentaire
-            zoneDeTexte.setText(zoneDeTexte.getText() + texteRedac[index]);
+            String message = zoneDeTexte.getText() + texteRedac[index];
+            zoneDeTexte.setText(message);
 
             //On met à jour le bouton
             boutonRedac.setText(texteRedac[++index]);

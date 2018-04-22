@@ -12,10 +12,9 @@
         android:orientation="vertical"
         android:visibility="visible">
 
-
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="5">
 
             <ImageView
@@ -23,6 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
+                android:contentDescription="@string/cash_image_description"
                 android:scaleType="centerCrop" />
 
             <LinearLayout
@@ -52,7 +52,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
                     android:paddingTop="10dp"
-                    android:text="10:0"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="50sp" />
@@ -75,7 +74,6 @@
                         android:layout_height="61dp"
                         android:background="@color/transparent"
                         android:contentDescription="@string/reveil"
-                        android:onClick="clicReveil"
                         android:padding="5dp"
                         android:scaleType="centerCrop"
                         app:layout_constraintStart_toStartOf="parent"
@@ -85,28 +83,15 @@
                         app:srcCompat="@drawable/reveil_jeu_asset1" />
                 </android.support.constraint.ConstraintLayout>
 
-                <TextView
-                    android:id="@+id/compteur"
-                    android:layout_width="match_parent"
-                    android:layout_height="46dp"
-                    android:layout_weight="5"
-                    android:text="0"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/holo_red_light"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
             </LinearLayout>
         </android.support.constraint.ConstraintLayout>
-
-        <!-- TODO customiser avec https://android-dev-examples.blogspot.ca/2014/09/android-custom-horizontal-progressbar.html -->
-
     </LinearLayout>
 
     <ImageView
         android:id="@+id/imageConfettis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/cash_image_victoire"
         android:alpha="0"
         android:scaleType="centerCrop" />
 
@@ -115,6 +100,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0"
+        android:contentDescription="@string/cash_image_defaite"
         android:scaleType="centerCrop" />
 
     <VideoView
@@ -133,7 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="200sp"
-            android:text="Gagné !"
+            android:text="@string/cash_gagne"
             android:textAlignment="center"
             android:textColor="@android:color/holo_green_dark"
             android:textSize="50sp"
@@ -143,9 +129,9 @@
             android:id="@+id/texteFin2"
             android:layout_width="300sp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40sp"
+            android:layout_marginStart="40sp"
             android:backgroundTint="@android:color/background_light"
-            android:text="Bravo, tu as réussi à éteindre 7 fois ton réveil ! Tu peux aller en cours en toute tranquilité !"
+            android:text="@string/cash_message_gagne"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
@@ -159,7 +145,7 @@
             android:layout_marginTop="50dp"
             android:backgroundTint="@color/bleu_sombre"
             android:onClick="boutonSuivant"
-            android:text="La suite please !"
+            android:text="@string/cash_suite"
             android:textColor="@color/blanc"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="50dp"
@@ -181,6 +167,7 @@
             <ImageView
                 android:id="@+id/imageAccueil"
                 android:layout_width="match_parent"
+                android:contentDescription="@string/cash_description_image_accueil"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop" />
 
@@ -199,7 +186,7 @@
                     android:layout_marginTop="240dp"
                     android:backgroundTint="@color/bleu_sombre"
                     android:onClick="launchGame"
-                    android:text="Go !"
+                    android:text="@string/cash_texte_go"
                     android:textColor="@color/blanc"
                     android:textSize="20sp"
                     tools:layout_editor_absoluteX="50dp"
@@ -209,7 +196,5 @@
         </android.support.constraint.ConstraintLayout>
 
     </LinearLayout>
-
-
 
 </android.support.constraint.ConstraintLayout>
