@@ -47,7 +47,8 @@ public class OptionActivity extends Activity
 
                     break;
                 case R.id.cash:
-
+                    intent = new Intent(this, uqac.dim.houla.cash.GameView.class);
+                    startActivity(intent);
                     break;
                 case R.id.couette:
 

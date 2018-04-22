@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layoutGeneral"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5">
+
+            <ImageView
+                android:id="@+id/imagePartie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="100">
+
+                <ProgressBar
+                    android:id="@+id/progressionJeu"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_weight="5"
+                    android:background="@color/blanc"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:maxHeight="20sp"
+                    android:minHeight="20sp"
+                    android:progress="100"
+                    android:progressBackgroundTint="@color/blanc"
+                    android:progressTint="@color/bleu_sombre" />
+
+                <TextView
+                    android:id="@+id/timer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:paddingTop="10dp"
+                    android:text="10:0"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="50sp" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/reveilLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_weight="85"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    app:layout_constraintEnd_toStartOf="@+id/imageButton"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton">
+
+                    <ImageButton
+                        android:id="@+id/imageButton"
+                        android:layout_width="56dp"
+                        android:layout_height="61dp"
+                        android:background="@color/transparent"
+                        android:contentDescription="@string/reveil"
+                        android:onClick="clicReveil"
+                        android:padding="5dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_editor_absoluteX="0dp"
+                        app:layout_editor_absoluteY="0dp"
+                        app:srcCompat="@drawable/reveil_jeu_asset1" />
+                </android.support.constraint.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/compteur"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_weight="5"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+
+        <!-- TODO customiser avec https://android-dev-examples.blogspot.ca/2014/09/android-custom-horizontal-progressbar.html -->
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageConfettis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/imageTriste"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:scaleType="centerCrop" />
+
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/videoView" />
+
+    <LinearLayout
+        android:id="@+id/layoutFin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/texteFin1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200sp"
+            android:text="Gagné !"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/texteFin2"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40sp"
+            android:backgroundTint="@android:color/background_light"
+            android:text="Bravo, tu as réussi à éteindre 7 fois ton réveil ! Tu peux aller en cours en toute tranquilité !"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/boutonSuivant"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/bleu_sombre"
+            android:onClick="boutonSuivant"
+            android:text="La suite please !"
+            android:textColor="@color/blanc"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="652dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutRegles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageAccueil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="10">
+
+                <Button
+                    android:id="@+id/buttonGo"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="100dp"
+                    android:layout_marginTop="240dp"
+                    android:backgroundTint="@color/bleu_sombre"
+                    android:onClick="launchGame"
+                    android:text="Go !"
+                    android:textColor="@color/blanc"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="50dp"
+                    tools:layout_editor_absoluteY="652dp" />
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>
