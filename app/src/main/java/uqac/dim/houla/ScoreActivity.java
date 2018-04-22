@@ -6,6 +6,8 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
+
 public class ScoreActivity extends AppCompatActivity {
 
     @Override
@@ -27,7 +29,12 @@ public class ScoreActivity extends AppCompatActivity {
         if (score < 2)
         {
             //On affiche la vue de perte
-            fond.setImageResource(R.drawable.score_gagne_background);
+            fond.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.score_perdu_background, 500, 500));
+        }
+        else
+        {
+            //On affiche la vue de victoire
+            fond.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.score_gagne_background, 500, 500));
         }
     }
 }

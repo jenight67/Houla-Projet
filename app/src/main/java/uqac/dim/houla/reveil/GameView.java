@@ -25,6 +25,8 @@ import uqac.dim.houla.Constant;
 import uqac.dim.houla.MainActivity;
 import uqac.dim.houla.R;
 
+import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
+
 public class GameView extends AppCompatActivity {
 
     int compteur;
@@ -51,12 +53,17 @@ public class GameView extends AppCompatActivity {
         //On met le résultat de jeu à faux
         win = false;
 
-        ImageView img = findViewById(R.id.imageView4);
-        //img.setImageResource(R.drawable.reveil_regles);
+        //On affiche l'image de fond
+        ImageView image_accueil = findViewById(R.id.imageAccueil);
+        image_accueil.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reveil_regles_background, 500, 500));
     }
 
     public void launchGame(View v)
     {
+        //On affiche l'image de fond
+        ImageView image_partie = findViewById(R.id.imagePartie);
+        image_partie.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reveil_jeu_background, 500, 500));
+
         //Récupéreation du layout des règles et suppression à l'écran
         LinearLayout layoutRegles = findViewById(R.id.layoutRegles);
         layoutRegles.setVisibility(View.GONE);
