@@ -29,21 +29,12 @@ public class ScoreActivity extends AppCompatActivity {
         if (score < 2)
         {
             //On affiche la vue de perte
-<<<<<<< HEAD
             fond.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.score_perdu_background, 500, 500));
         }
         else
         {
             //On affiche la vue de victoire
             fond.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.score_gagne_background, 500, 500));
-=======
-            fond.setImageResource(R.drawable.score_perdu_background);
-        }
-        else
-        {
-            //On affiche la vue de victore
-            fond.setImageResource(R.drawable.score_gagne_background);
->>>>>>> master
         }
     }
 }
