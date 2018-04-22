@@ -136,6 +136,7 @@ public class GameView extends AppCompatActivity {
             messageFin.setText("Bravo, tu as réussi à éteindre " + compteur + " fois ton réveil ! Tu peux aller en cours en toute tranquilité !");
             //On récupère l'instance de l'image des confettis
             ImageView imageConfettis = findViewById(R.id.imageConfettis);
+            imageConfettis.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reveil_gagne_background, 500, 500));
             //On rend l'image visible
             imageConfettis.setAlpha(1.0f);
             Animation apparition_courte = new AlphaAnimation(0.0f, 0.5f);
@@ -156,6 +157,7 @@ public class GameView extends AppCompatActivity {
             titreFin.setTextColor(getResources().getColor(R.color.red));
             //On récupère l'instance de l'image triste
             ImageView imageTriste = findViewById(R.id.imageTriste);
+            imageTriste.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reveil_perdu_background, 500, 500));
             //On rend l'image visible
             imageTriste.setAlpha(1.0f);
             Animation apparition_courte = new AlphaAnimation(0.0f, 0.5f);
