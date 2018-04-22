@@ -19,7 +19,7 @@ import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
 public class MainActivity extends Activity
 {
     //Tableau contenant les résultats des jeux
-    Hashtable resultatsJeux = new Hashtable();
+    Hashtable<Class, Boolean> resultatsJeux = new Hashtable<>();
 
     //Liste contenant les mini-jeux par ordre
     Class[] ordreJeux = {

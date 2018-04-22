@@ -7,7 +7,6 @@ import android.os.CountDownTimer;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -183,7 +182,6 @@ public class GameView extends AppCompatActivity {
 
     public void clicReveil(View v)
     {
-        Log.i("---", "clic");
         if (partieEnCours)
         {
             //On récupère l'instance du bouton

@@ -5,19 +5,14 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.MediaController;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.VideoView;
 
 import uqac.dim.houla.R;
@@ -87,7 +82,6 @@ public class GameView extends AppCompatActivity {
 
     public void launchVideo(View v)
     {
-        Log.i("clic","here we are");
         if (clic == 0)
         {
             //On affiche la vidéo
@@ -123,12 +117,6 @@ public class GameView extends AppCompatActivity {
         apparition.setFillAfter(false);
         apparition.setFillBefore(true);
         layoutFin.startAnimation(apparition);
-
-        //On récupère le titre de fin
-        TextView titreFin = findViewById(R.id.texteFin1);
-
-        //On récupère le message de fin
-        TextView messageFin = findViewById(R.id.texteFin2);
     }
 
     public void boutonSuivant(View v)

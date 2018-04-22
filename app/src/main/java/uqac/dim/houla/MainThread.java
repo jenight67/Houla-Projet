@@ -6,15 +6,15 @@ import android.view.SurfaceHolder;
 import uqac.dim.houla.course.GameView;
 
 /**
- *  Classe contenant le thread principale du jeu.
+ *  Classe contenant le thread principal du jeu.
  */
 
 public class MainThread extends Thread {
     //On set cette constante car sinon le telephone calcul trop vite et appel plus que 30 fois par seconde update ce qui ne sert a rien
-    public static final int MAX_FPS = 30;
+    private static final int MAX_FPS = 30;
 
     private double averageFPS;
-    private SurfaceHolder surfaceHolder;
+    private final SurfaceHolder surfaceHolder;
     private GameView gameView;
     private boolean running;
 
@@ -37,7 +37,7 @@ public class MainThread extends Thread {
         long waitTime;
         int frameCount = 0;
         long totalTime = 0;
-        long targetTime = 1000/MAX_FPS;
+        long targetTime = timeMillis;
 
         //Game Loop
         while(running) {
