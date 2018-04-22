@@ -134,7 +134,7 @@ public class GameView extends AppCompatActivity {
             //On adapte le titre de fin
             titreFin.setText(R.string.reveil_texte_victoire);
             //On adapte le message de fin
-            String message = getString(R.string.redac_message_victoire_1) + compteur + getString(R.string.reveil_message_victoire_2);
+            String message = getString(R.string.redac_message_victoire_1) + " " + compteur + " " + getString(R.string.reveil_message_victoire_2);
             messageFin.setText(message);
             //On récupère l'instance de l'image des confettis
             ImageView imageConfettis = findViewById(R.id.imageConfettis);
@@ -155,7 +155,7 @@ public class GameView extends AppCompatActivity {
             //On adapte le titre de fin
             titreFin.setText(R.string.reveil_message_defaite);
             //On adapte le message de fin
-            String message = getString(R.string.reveil_message_defaite_1) + compteur + getString(R.string.reveil_message_defaite_2);
+            String message = getString(R.string.reveil_message_defaite_1) + " " + compteur + " " + getString(R.string.reveil_message_defaite_2);
             messageFin.setText(message);
             titreFin.setTextColor(getResources().getColor(R.color.red));
             //On récupère l'instance de l'image triste

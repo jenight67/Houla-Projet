@@ -10,80 +10,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="5">
 
-            <ImageView
-                android:id="@+id/imagePartie"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:contentDescription="@string/cash_image_description"
-                android:scaleType="centerCrop" />
-
-            <LinearLayout
+            <Button
+                android:id="@+id/boutonCash"
+                android:onClick="launchVideo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:weightSum="100">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <ProgressBar
-                    android:id="@+id/progressionJeu"
-                    style="@android:style/Widget.ProgressBar.Horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:layout_weight="5"
-                    android:background="@color/blanc"
-                    android:indeterminate="false"
-                    android:max="100"
-                    android:maxHeight="20sp"
-                    android:minHeight="20sp"
-                    android:progress="100"
-                    android:progressBackgroundTint="@color/blanc"
-                    android:progressTint="@color/bleu_sombre" />
-
-                <TextView
-                    android:id="@+id/timer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:paddingTop="10dp"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="50sp" />
-
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/reveilLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_weight="85"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton"
-                    app:layout_constraintStart_toStartOf="@+id/imageButton">
-
-                    <ImageButton
-                        android:id="@+id/imageButton"
-                        android:layout_width="56dp"
-                        android:layout_height="61dp"
-                        android:background="@color/transparent"
-                        android:contentDescription="@string/reveil"
-                        android:padding="5dp"
-                        android:scaleType="centerCrop"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_editor_absoluteX="0dp"
-                        app:layout_editor_absoluteY="0dp"
-                        app:srcCompat="@drawable/reveil_jeu_asset1" />
-                </android.support.constraint.ConstraintLayout>
-
-            </LinearLayout>
         </android.support.constraint.ConstraintLayout>
     </LinearLayout>
 
@@ -95,6 +42,11 @@
         android:alpha="0"
         android:scaleType="centerCrop" />
 
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <ImageView
         android:id="@+id/imageTriste"
         android:layout_width="match_parent"
@@ -102,11 +54,6 @@
         android:alpha="0"
         android:contentDescription="@string/cash_image_defaite"
         android:scaleType="centerCrop" />
-
-    <VideoView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/videoView" />
 
     <LinearLayout
         android:id="@+id/layoutFin"
@@ -119,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="200sp"
-            android:text="@string/cash_gagne"
+            android:text="@string/cash_titre_fin"
             android:textAlignment="center"
             android:textColor="@android:color/holo_green_dark"
             android:textSize="50sp"
@@ -131,7 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="40sp"
             android:backgroundTint="@android:color/background_light"
-            android:text="@string/cash_message_gagne"
+            android:text="@string/cash_message_fin"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
