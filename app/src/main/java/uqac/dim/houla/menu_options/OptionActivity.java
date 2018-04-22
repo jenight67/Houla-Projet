@@ -43,12 +43,6 @@ public class OptionActivity extends Activity
         try {
             switch (v.getId()) {
 
-                case R.id.baston:
-
-                    break;
-                case R.id.biere:
-
-                    break;
                 case R.id.bourre:
 
                     break;
@@ -78,9 +72,6 @@ public class OptionActivity extends Activity
                     startActivity(intent);
                     break;
                 case R.id.sleep:
-
-                    break;
-                case R.id.vaisselle:
 
                     break;
             }
