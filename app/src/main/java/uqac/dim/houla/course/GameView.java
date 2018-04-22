@@ -1,20 +1,13 @@
 package uqac.dim.houla.course;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.graphics.Rect;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import uqac.dim.houla.Constant;
-import uqac.dim.houla.MainActivity;
 import uqac.dim.houla.MainThread;
 
 /**
@@ -46,7 +39,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         setFocusable(true);
     }
 
-    public void setActivity(courseActivity activity){
+    public void setActivity(gameActivity activity){
         manager.setActivity(activity);
     }
 

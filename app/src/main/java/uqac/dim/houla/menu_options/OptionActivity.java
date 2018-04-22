@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 
 import uqac.dim.houla.R;
+import uqac.dim.houla.course.gameActivity;
 import uqac.dim.houla.reveil.GameView;
 
 import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
@@ -54,7 +55,7 @@ public class OptionActivity extends Activity
 
                     break;
                 case R.id.course:
-                    intent = new Intent(this, uqac.dim.houla.course.courseActivity.class);
+                    intent = new Intent(this, gameActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.motivation:

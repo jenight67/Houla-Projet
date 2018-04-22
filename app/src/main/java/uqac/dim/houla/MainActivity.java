@@ -11,6 +11,7 @@ import android.view.WindowManager;
 
 import java.util.Hashtable;
 
+import uqac.dim.houla.course.gameActivity;
 import uqac.dim.houla.menu_options.OptionActivity;
 
 public class MainActivity extends Activity
@@ -21,7 +22,7 @@ public class MainActivity extends Activity
     //Liste contenant les mini-jeux par ordre
     Class[] ordreJeux = {
         uqac.dim.houla.reveil.GameView.class,
-        uqac.dim.houla.course.courseActivity.class,
+        gameActivity.class,
         uqac.dim.houla.redac.GameView.class
     };
 

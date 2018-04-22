@@ -8,4 +8,5 @@ public interface Scene {
     void draw(Canvas canvas);
     void terminate();
     void receiveTouch(MotionEvent event);
+    void setActivity(gameActivity activity);
 }

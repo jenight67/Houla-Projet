@@ -1,5 +1,7 @@
 package uqac.dim.houla.course;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,14 +11,17 @@ import android.util.Log;
 import android.view.MotionEvent;
 
 import uqac.dim.houla.Constant;
+import uqac.dim.houla.R;
 
-public class GameplayScene implements Scene {
+public class courseScene implements Scene {
 
 
-    private courseActivity main;
+    private gameActivity main;
     private Player player;
     private Point playerPoint;
     private ObstacleManager om;
+    private Bitmap background;
+    private Rect backgroundRect;
 
     private boolean movingPlayer = false;
     private boolean gameOver = false;
@@ -26,7 +31,13 @@ public class GameplayScene implements Scene {
     private static final int TIMER = 10;
     private static final int PLAYER_HEIGHT = Constant.SCREEN_HEIGHT*7/10;
 
-    public GameplayScene(){
+    public courseScene(){
+
+        backgroundRect = new Rect(0,0,Constant.SCREEN_WIDTH,Constant.SCREEN_HEIGHT);
+
+        BitmapFactory bf = new BitmapFactory();
+        background = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.course_background);
+
 
         Log.i("DICJ","Avant loading player");
         player = new Player(new Rect(100,100,200,200), Color.rgb(255,0,0));
@@ -41,7 +52,7 @@ public class GameplayScene implements Scene {
         initTime = System.currentTimeMillis();
     }
 
-    private int getTimer(){
+    public int getTimer(){
         long currTime = System.currentTimeMillis();
         int time = (int)((currTime - initTime) /1000);
         time = TIMER - time;
@@ -51,7 +62,7 @@ public class GameplayScene implements Scene {
         return time;
     }
 
-    public void setActivity(courseActivity main){
+    public void setActivity(gameActivity main){
         this.main = main;
     }
 
@@ -68,7 +79,7 @@ public class GameplayScene implements Scene {
 
     @Override
     public void draw(Canvas canvas) {
-        canvas.drawColor(Color.WHITE);
+        canvas.drawBitmap(background,null,backgroundRect,new Paint());
 
         player.draw(canvas);
 
