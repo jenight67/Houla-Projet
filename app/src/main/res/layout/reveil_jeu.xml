@@ -19,7 +19,7 @@
             android:layout_weight="5">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imagePartie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
@@ -103,19 +103,19 @@
 
     </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageConfettis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:alpha="0"
-            android:src="@drawable/reveil_gagne_background" />
+    <ImageView
+        android:id="@+id/imageConfettis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:scaleType="centerCrop" />
 
     <ImageView
         android:id="@+id/imageTriste"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0"
-        android:src="@drawable/reveil_perdu_background" />
+        android:scaleType="centerCrop" />
 
         <LinearLayout
             android:id="@+id/layoutFin"
@@ -142,15 +142,24 @@
                 android:backgroundTint="@android:color/background_light"
                 android:text="Bravo, tu as réussi à éteindre 7 fois ton réveil ! Tu peux aller en cours en toute tranquilité !"
                 android:textAlignment="center"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
             <Button
-                android:id="@+id/buttonSuivant"
+                android:id="@+id/boutonSuivant"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="50sp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="@color/bleu_sombre"
                 android:onClick="boutonSuivant"
-                android:text="La suite please !" />
+                android:text="La suite please !"
+                android:textColor="@color/blanc"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="652dp" />
+
         </LinearLayout>
 
     <LinearLayout
@@ -165,10 +174,10 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/imageAccueil"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/blanc" />
+                android:scaleType="centerCrop" />
 
             <LinearLayout
                 android:layout_width="match_parent"

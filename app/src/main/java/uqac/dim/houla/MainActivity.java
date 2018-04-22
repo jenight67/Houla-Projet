@@ -12,7 +12,6 @@ import android.view.WindowManager;
 import java.util.Hashtable;
 
 import uqac.dim.houla.menu_options.OptionActivity;
-import uqac.dim.houla.reveil.GameView;
 
 public class MainActivity extends Activity
 {
