@@ -20,13 +20,20 @@ public class MainActivity extends Activity
 
     //Liste contenant les mini-jeux par ordre
     Class[] ordreJeux = {
-        uqac.dim.houla.reveil.GameView.class,
-        uqac.dim.houla.course.courseActivity.class,
-        uqac.dim.houla.redac.GameView.class
+            uqac.dim.houla.reveil.GameView.class,
+            uqac.dim.houla.couette.couetteActivity.class,
+            uqac.dim.houla.pote.GameView.class,
+            uqac.dim.houla.course.courseActivity.class,
+            uqac.dim.houla.redac.GameView.class,
+            uqac.dim.houla.cash.GameView.class,
+            uqac.dim.houla.bourre.GameView.class
     };
 
     //Score du joueur
     private int score = 0;
+
+    //Nombre de mini-jeux effectués
+    private int effectues = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -84,17 +91,26 @@ public class MainActivity extends Activity
         //On affiche le résultat du minijeu
         Log.i("Résultat minijeu :", resultatsJeux.get(ordreJeux[requestCode]) + "");
 
-        //Si le min-jeu a réussi, passer au suivant, sinon arrêter la partie
-        if (result)
+        //Incrémnent du nombre de mini-jeux effectués
+        effectues++;
+        //Si tous les mini-jeux ont été joués, alors appeler la fonction de fin, sinon appeler le minijeu suivant
+        if (effectues == 7)
         {
-            Log.i("MainActivity", "Mini-jeu réussi !");
-            score++;
-            nextMiniGame(requestCode);
+            endGame();
         }
         else
         {
-            Log.i("MainActivity", "Mini-jeu perdu...");
-            endGame();
+            //Si le min-jeu a réussi, incrémenter le score
+            if (result)
+            {
+                Log.i("MainActivity", "Mini-jeu réussi !");
+                score++;
+            }
+            else
+            {
+                Log.i("MainActivity", "Mini-jeu perdu...");
+            }
+            nextMiniGame(requestCode);
         }
     }
 
