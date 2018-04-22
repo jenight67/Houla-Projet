@@ -94,7 +94,8 @@ public class GameView extends AppCompatActivity {
         }.start();
     }
 
-    protected void endGame() {
+    protected void endGame()
+    {
         //On passe partieEnCours à faux
         partieEnCours = false;
 

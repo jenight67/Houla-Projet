@@ -37,6 +37,9 @@
         <activity
             android:name=".redac.GameView"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".cash.GameView"
+            android:screenOrientation="portrait" />
         <activity android:name=".course.courseActivity" />
         <activity android:name=".ScoreActivity" />
         <activity android:name=".couette.couetteActivity"></activity>
