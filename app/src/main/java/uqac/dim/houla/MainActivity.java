@@ -8,26 +8,36 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import java.util.Hashtable;
 
 import uqac.dim.houla.course.gameActivity;
 import uqac.dim.houla.menu_options.OptionActivity;
 
+import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
+
 public class MainActivity extends Activity
 {
     //Tableau contenant les résultats des jeux
-    Hashtable resultatsJeux = new Hashtable();
+    Hashtable<Class, Boolean> resultatsJeux = new Hashtable<>();
 
     //Liste contenant les mini-jeux par ordre
     Class[] ordreJeux = {
-        uqac.dim.houla.reveil.GameView.class,
-        gameActivity.class,
-        uqac.dim.houla.redac.GameView.class
+            uqac.dim.houla.reveil.GameView.class,
+            uqac.dim.houla.course.gameActivity.class,
+            uqac.dim.houla.pote.GameView.class,
+            uqac.dim.houla.course.gameActivity.class,
+            uqac.dim.houla.redac.GameView.class,
+            uqac.dim.houla.cash.GameView.class,
+            uqac.dim.houla.bourre.GameView.class
     };
 
     //Score du joueur
     private int score = 0;
+
+    //Nombre de mini-jeux effectués
+    private int effectues = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -53,6 +63,9 @@ public class MainActivity extends Activity
         super.onResume();
         //Afficher la vue d'accueil
         setContentView(R.layout.activity_main);
+        //On affiche l'image de fond
+        ImageView image_accueil = findViewById(R.id.imageAccueil);
+        image_accueil.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.accueil_vue_background, 500, 500));
     }
 
     //Lancemenent de tous les minijeux à la suite
@@ -85,17 +98,26 @@ public class MainActivity extends Activity
         //On affiche le résultat du minijeu
         Log.i("Résultat minijeu :", resultatsJeux.get(ordreJeux[requestCode]) + "");
 
-        //Si le min-jeu a réussi, passer au suivant, sinon arrêter la partie
-        if (result)
+        //Incrémnent du nombre de mini-jeux effectués
+        effectues++;
+        //Si tous les mini-jeux ont été joués, alors appeler la fonction de fin, sinon appeler le minijeu suivant
+        if (effectues == 7)
         {
-            Log.i("MainActivity", "Mini-jeu réussi !");
-            score++;
-            nextMiniGame(requestCode);
+            endGame();
         }
         else
         {
-            Log.i("MainActivity", "Mini-jeu perdu...");
-            endGame();
+            //Si le min-jeu a réussi, incrémenter le score
+            if (result)
+            {
+                Log.i("MainActivity", "Mini-jeu réussi !");
+                score++;
+            }
+            else
+            {
+                Log.i("MainActivity", "Mini-jeu perdu...");
+            }
+            nextMiniGame(requestCode);
         }
     }
 
