@@ -44,16 +44,16 @@ public class Player implements GameObject {
         idle = new Animation(idleBit,1f);
 
         Bitmap[] walkRightBit = new Bitmap[3];
-        walkRightBit[0] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.walkright0);
-        walkRightBit[1] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.walkright1);
-        walkRightBit[2] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.walkright2);
+        walkRightBit[0] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.course_player_walkright0);
+        walkRightBit[1] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.course_player_walkright1);
+        walkRightBit[2] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.course_player_walkright2);
 
         walkRight = new Animation(walkRightBit, 1f);
 
         Bitmap[] walkLeftBit = new Bitmap[3];
-        walkLeftBit[0] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.walkleft0);
-        walkLeftBit[1] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.walkleft1);
-        walkLeftBit[2] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.walkleft2);
+        walkLeftBit[0] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.course_player_walkleft0);
+        walkLeftBit[1] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.course_player_walkleft1);
+        walkLeftBit[2] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.course_player_walkleft2);
 
         walkLeft = new Animation(walkLeftBit, 1f);
 

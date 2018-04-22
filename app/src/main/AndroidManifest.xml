@@ -8,13 +8,13 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:hardwareAccelerated="false"
-        android:largeHeap="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name=".MainActivity"
@@ -38,7 +38,8 @@
             android:name=".redac.GameView"
             android:screenOrientation="portrait" />
         <activity android:name=".course.courseActivity" />
-        <activity android:name=".ScoreActivity"></activity>
+        <activity android:name=".ScoreActivity" />
+        <activity android:name=".couette.couetteActivity"></activity>
     </application>
 
 </manifest>

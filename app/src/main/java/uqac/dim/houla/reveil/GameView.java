@@ -25,6 +25,8 @@ import uqac.dim.houla.Constant;
 import uqac.dim.houla.MainActivity;
 import uqac.dim.houla.R;
 
+import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
+
 public class GameView extends AppCompatActivity {
 
     int compteur;
@@ -51,12 +53,17 @@ public class GameView extends AppCompatActivity {
         //On met le résultat de jeu à faux
         win = false;
 
-        ImageView img = findViewById(R.id.imageView4);
-        //img.setImageResource(R.drawable.reveil_regles);
+        //On affiche l'image de fond
+        ImageView image_accueil = findViewById(R.id.imageAccueil);
+        image_accueil.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reveil_regles_background, 500, 500));
     }
 
     public void launchGame(View v)
     {
+        //On affiche l'image de fond
+        ImageView image_partie = findViewById(R.id.imagePartie);
+        image_partie.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reveil_jeu_background, 500, 500));
+
         //Récupéreation du layout des règles et suppression à l'écran
         LinearLayout layoutRegles = findViewById(R.id.layoutRegles);
         layoutRegles.setVisibility(View.GONE);
@@ -129,6 +136,7 @@ public class GameView extends AppCompatActivity {
             messageFin.setText("Bravo, tu as réussi à éteindre " + compteur + " fois ton réveil ! Tu peux aller en cours en toute tranquilité !");
             //On récupère l'instance de l'image des confettis
             ImageView imageConfettis = findViewById(R.id.imageConfettis);
+            imageConfettis.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reveil_gagne_background, 500, 500));
             //On rend l'image visible
             imageConfettis.setAlpha(1.0f);
             Animation apparition_courte = new AlphaAnimation(0.0f, 0.5f);
@@ -149,6 +157,7 @@ public class GameView extends AppCompatActivity {
             titreFin.setTextColor(getResources().getColor(R.color.red));
             //On récupère l'instance de l'image triste
             ImageView imageTriste = findViewById(R.id.imageTriste);
+            imageTriste.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reveil_perdu_background, 500, 500));
             //On rend l'image visible
             imageTriste.setAlpha(1.0f);
             Animation apparition_courte = new AlphaAnimation(0.0f, 0.5f);

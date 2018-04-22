@@ -5,10 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 
 import uqac.dim.houla.R;
 import uqac.dim.houla.reveil.GameView;
+
+import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
 
 public class OptionActivity extends Activity
 {
@@ -19,6 +22,9 @@ public class OptionActivity extends Activity
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_option);
+
+        ImageView fond = findViewById(R.id.imageFond2);
+        fond.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.options_background, 10000, 10000));
     }
 
     @Override

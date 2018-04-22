@@ -5,6 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imageFond"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:layout_editor_absoluteY="148dp" />
+
     <LinearLayout
         android:id="@+id/layoutGeneral"
         android:layout_width="match_parent"
@@ -20,14 +27,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="5"
-            android:background="@android:color/transparent"
+            android:background="@color/blanc"
             android:indeterminate="false"
             android:max="100"
             android:maxHeight="20sp"
             android:minHeight="20sp"
             android:progress="100"
-            android:progressBackgroundTint="@android:color/transparent"
-            android:progressTint="@color/colorPrimaryDark" />
+            android:progressBackgroundTint="@color/blanc"
+            android:progressTint="@color/bleu_sombre" />
 
         <!-- TODO customiser avec https://android-dev-examples.blogspot.ca/2014/09/android-custom-horizontal-progressbar.html -->
 
@@ -52,6 +59,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="60sp"
                 android:paddingRight="60sp"
+                android:paddingTop="20sp"
                 android:text=""
                 android:textColor="@android:color/black"
                 android:textSize="24sp" />
@@ -79,14 +87,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0"
-        android:src="@drawable/reveil_gagne_background" />
+        android:scaleType="centerCrop" />
 
     <ImageView
         android:id="@+id/imageTriste"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0"
-        android:src="@drawable/reveil_perdu_background" />
+        android:scaleType="centerCrop" />
 
     <LinearLayout
         android:id="@+id/layoutFin"
@@ -113,15 +121,24 @@
             android:backgroundTint="@android:color/background_light"
             android:text="Bravo, tu as réussi à écrire ta rédaction dans les temps !"
             android:textAlignment="center"
+            android:textColor="@android:color/black"
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/buttonSuivant"
+            android:id="@+id/boutonSuivant"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="50sp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/bleu_sombre"
             android:onClick="boutonSuivant"
-            android:text="La suite please !" />
+            android:text="La suite please !"
+            android:textColor="@color/blanc"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="652dp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -130,36 +147,22 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/texteRegle1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="200sp"
-            android:text="@string/redac_titre"
-            android:textAlignment="center"
-            android:textColor="@android:color/background_dark"
-            android:textSize="40sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/texteRegle2"
-            android:layout_width="300sp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40sp"
-            android:backgroundTint="@android:color/background_light"
-            android:text="Mince, tu viens de te réveiller et tu vois un sujet de rédaction posé sur ton bureau. Il ne te reste plus beaucoup de temps pour écrire ta rédaction en cliquant sur les touches du clavier !"
-            android:textAlignment="center"
-            android:textSize="18sp" />
-
         <Button
             android:id="@+id/buttonGo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="50sp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="240dp"
+            android:backgroundTint="@color/bleu_sombre"
             android:onClick="launchGame"
-            android:text="Go !" />
-    </LinearLayout>
+            android:text="Go !"
+            android:textColor="@color/blanc"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="652dp" />
 
+    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>

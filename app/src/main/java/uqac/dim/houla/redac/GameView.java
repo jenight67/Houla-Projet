@@ -20,6 +20,8 @@ import java.util.concurrent.TimeUnit;
 import uqac.dim.houla.MainActivity;
 import uqac.dim.houla.R;
 
+import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
+
 public class GameView extends AppCompatActivity {
 
     int index;
@@ -27,7 +29,8 @@ public class GameView extends AppCompatActivity {
     boolean partieEnCours;
     String[] texteRedac = { "A", " v", "a", " ê", "t", "r", "e", " b", "o", "n", "n", "e", " à", " s", "o", "i", "r", " d", "a", "n", "s", " l'", "s", "h", "a", "c", "k", " à", " H", "e", "c", "t", "o", "r",
             "\nO", "u", "v", "r", "e", " l", "a", " v", "a", "l", "i", "s", "e", " p", "i", "s", " s", "o", "r", "s", " l", "e", "s", " b", "o", "u", "t", "e", "i", "l", "l", "e", "s", " d", "e", " f","o", "r","t\n",
-            "P", "i", "s", " s", "i", " t", "o", "n", " f", "o", "i", "e", " d", "é", "c", "i", "d", "e", " d'", "ê", "t", "r", "e", " m", "a", "l", "a", "d","w", ""};
+            "P", "i", "s", " s", "i", " t", "o", "n", " f", "o", "i", "e", " d", "é", "c", "i", "d", "e", " d'", "ê", "t", "r", "e", " m", "a", "l", "a", "d","e\n", ",",
+            "A", "r", "r", "a", "n", "g", "e", " t", "o", "i", " p", "o", "u", "r", " p", "a", "s", " f", "a", "i", "r", "e", " ç", "a", " d", "a", "n", "s", " l'", "p", "l", "a", "t", " d'", "s", "a", "l", "a", "d", "e", ""};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -55,10 +58,18 @@ public class GameView extends AppCompatActivity {
 
         //On met le boolean de retour de jeu à false
         win = false;
+
+        //On affiche l'image de fond
+        ImageView image_accueil = findViewById(R.id.imageFond);
+        image_accueil.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.redac_regles_background, 500, 500));
     }
 
     public void launchGame(View v)
     {
+        //On affiche l'image de fond
+        ImageView image_partie = findViewById(R.id.imageFond);
+        image_partie.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.redac_jeu_background, 500, 500));
+
         //Récupèreation du layout des règles et suppression à l'écran
         LinearLayout layoutRegles = findViewById(R.id.layoutRegles);
         layoutRegles.setVisibility(View.GONE);
@@ -121,16 +132,17 @@ public class GameView extends AppCompatActivity {
         //On récupère le message de fin
         TextView messageFin = findViewById(R.id.texteFin2);
 
-        if (index >= 8)
+        if (index >= 70)
         {
             //On dit que le jeu est gagné
             win = true;
             //On adapte le titre de fin
             titreFin.setText("Gagné !");
             //On adapte le message de fin
-            messageFin.setText("Bravo, tu as écrire " + index + " caractères ! Tu mérite de continuer tes études !");
+            messageFin.setText("Bravo, tu as écrit " + index + " caractères ! Tu mérite de continuer tes études !");
             //On récupère l'instance de l'image des confettis
             ImageView imageConfettis = findViewById(R.id.imageConfettis);
+            imageConfettis.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reveil_gagne_background, 500, 500));
             //On rend l'image visible
             imageConfettis.setAlpha(1.0f);
             Animation apparition_courte = new AlphaAnimation(0.0f, 0.5f);
@@ -151,6 +163,7 @@ public class GameView extends AppCompatActivity {
             titreFin.setTextColor(getResources().getColor(R.color.red));
             //On récupère l'instance de l'image triste
             ImageView imageTriste = findViewById(R.id.imageTriste);
+            imageTriste.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reveil_perdu_background, 500, 500));
             //On rend l'image visible
             imageTriste.setAlpha(1.0f);
             Animation apparition_courte = new AlphaAnimation(0.0f, 0.5f);
