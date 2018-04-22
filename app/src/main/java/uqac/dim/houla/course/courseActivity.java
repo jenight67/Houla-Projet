@@ -11,7 +11,8 @@ public class courseActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        uqac.dim.houla.course.GameView gm = new uqac.dim.houla.course.GameView(this);
+        int game = getIntent().getIntExtra("game",0);
+        uqac.dim.houla.course.GameView gm = new uqac.dim.houla.course.GameView(this,game);
         setContentView(gm);
         gm.setActivity(this);
         super.onCreate(savedInstanceState);

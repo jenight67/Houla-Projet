@@ -29,7 +29,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
 
 
-    public GameView(Context context){
+    public GameView(Context context, int jeu){
         super(context);
 
         getHolder().addCallback(this);
@@ -41,7 +41,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         thread = new MainThread(getHolder(), this);
 
         Log.i("DICJ","New SceneManager");
-        manager = new SceneManager();
+        manager = new SceneManager(jeu);
 
         setFocusable(true);
     }

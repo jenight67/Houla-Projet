@@ -11,7 +11,7 @@ public class SceneManager {
     private ArrayList<Scene> scenes = new ArrayList<>();
     public static int ACTIVE_SCENES;
 
-    public SceneManager(){
+    public SceneManager(int game){
         ACTIVE_SCENES = 0;
         Log.i("DICJ","New GameplayScene");
         gm = new GameplayScene();
