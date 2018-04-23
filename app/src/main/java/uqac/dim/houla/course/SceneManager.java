@@ -6,16 +6,24 @@ import android.view.MotionEvent;
 
 import java.util.ArrayList;
 
+import uqac.dim.houla.couette.couetteScene;
+
 public class SceneManager {
     private courseScene gm;
+    private couetteScene cm;
     private ArrayList<Scene> scenes = new ArrayList<>();
     public static int ACTIVE_SCENES;
 
     public SceneManager(int game){
-        ACTIVE_SCENES = 0;
+        ACTIVE_SCENES = game;
         Log.i("DICJ","New courseScene");
+
+        //Scene 0
         gm = new courseScene();
         scenes.add(gm);
+        //Scene 1
+        cm = new couetteScene();
+        scenes.add(cm);
     }
 
     public void receiveTouch(MotionEvent event){
