@@ -54,10 +54,13 @@ public class OptionActivity extends AppCompatActivity
                     startActivity(intent);
                     break;
                 case R.id.couette:
-
+                    intent = new Intent(this, gameActivity.class);
+                    intent.putExtra("game",1);
+                    startActivity(intent);
                     break;
                 case R.id.course:
                     intent = new Intent(this, gameActivity.class);
+                    intent.putExtra("game",0);
                     startActivity(intent);
                     break;
                 case R.id.pote:

@@ -42,7 +42,8 @@ public class Animation {
         if(!playing)
             return;
 
-        scaleRect(destination);
+        //Arrange (normalement) la taille des sprites ( mais rend les banananes transgéniques.
+        //scaleRect(destination);
 
         canvas.drawBitmap(frames[frameIndex],null,destination,new Paint());
     }

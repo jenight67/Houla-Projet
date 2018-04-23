@@ -84,7 +84,7 @@ public class ObstacleManager {
 
 
             int startX = (int)(Math.random()*(Constant.SCREEN_WIDTH));
-        obstacles.add(0,new Obstacle(obsHeight,Color.BLACK,startX,currY,new Animation(idleBit,1f)));
+        obstacles.add(0,new Obstacle(obsHeight,Color.BLACK,startX,currY,idle));
         obstacles.remove(obstacles.size()-1);
     }
     }

@@ -21,6 +21,8 @@ public class MainActivity extends Activity
 {
     //Tableau contenant les résultats des jeux
     Hashtable<Class, Boolean> resultatsJeux = new Hashtable<>();
+    //Utiliser pour mettre le bon parametre en intent pour mes minijeux.
+    private int minijeuJeremy;
 
     //Liste contenant les mini-jeux par ordre
     Class[] ordreJeux = {
@@ -55,6 +57,7 @@ public class MainActivity extends Activity
         Constant.SCREEN_HEIGHT = dm.heightPixels;
 
         setContentView(R.layout.activity_main);
+        minijeuJeremy = 0;
     }
 
     @Override
@@ -73,6 +76,9 @@ public class MainActivity extends Activity
     {
         //Lancement du premier minijeu
         Intent intent = new Intent(this, ordreJeux[0]);
+        //Utilisé par gameActivity
+        intent.putExtra("game",minijeuJeremy%2);
+        minijeuJeremy++;
         startActivityForResult(intent, 0);
     }
 
