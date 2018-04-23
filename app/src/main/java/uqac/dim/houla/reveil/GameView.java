@@ -1,12 +1,12 @@
 package uqac.dim.houla.reveil;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -22,7 +22,6 @@ import android.widget.TextView;
 import java.util.concurrent.TimeUnit;
 
 import uqac.dim.houla.Constant;
-import uqac.dim.houla.MainActivity;
 import uqac.dim.houla.R;
 
 import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
@@ -89,7 +88,7 @@ public class GameView extends AppCompatActivity {
 
             public void onFinish() {
                 endGame();
-                texteTimer.setText("00:0");
+                texteTimer.setText(R.string.reveil_texte_compteur_depart);
             }
         }.start();
     }
@@ -132,9 +131,10 @@ public class GameView extends AppCompatActivity {
             //On met le résultat de jeu à true
             win = true;
             //On adapte le titre de fin
-            titreFin.setText("Gagné !");
+            titreFin.setText(R.string.reveil_texte_victoire);
             //On adapte le message de fin
-            messageFin.setText("Bravo, tu as réussi à éteindre " + compteur + " fois ton réveil ! Tu peux aller en cours en toute tranquilité !");
+            String message = getString(R.string.redac_message_victoire_1) + " " + compteur + " " + getString(R.string.reveil_message_victoire_2);
+            messageFin.setText(message);
             //On récupère l'instance de l'image des confettis
             ImageView imageConfettis = findViewById(R.id.imageConfettis);
             imageConfettis.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reveil_gagne_background, 500, 500));
@@ -152,9 +152,10 @@ public class GameView extends AppCompatActivity {
             //On met le résultat de jeu à faux
             win = false;
             //On adapte le titre de fin
-            titreFin.setText("Perdu...");
+            titreFin.setText(R.string.reveil_message_defaite);
             //On adapte le message de fin
-            messageFin.setText("Zut, tu n'as réussi à éteindre ton réveil que " + compteur + " fois, bon allez, on continue...");
+            String message = getString(R.string.reveil_message_defaite_1) + " " + compteur + " " + getString(R.string.reveil_message_defaite_2);
+            messageFin.setText(message);
             titreFin.setTextColor(getResources().getColor(R.color.red));
             //On récupère l'instance de l'image triste
             ImageView imageTriste = findViewById(R.id.imageTriste);
@@ -173,7 +174,7 @@ public class GameView extends AppCompatActivity {
     //Créé un format de temps
     private String TimeFormatter(long milliSeconds) {
 
-        String ms = String.format("%02d:%02d",
+        @SuppressLint("DefaultLocale") String ms = String.format("%02d:%02d",
                 TimeUnit.MILLISECONDS.toSeconds(milliSeconds) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(milliSeconds)),
                 TimeUnit.MILLISECONDS.toMillis(milliSeconds) - TimeUnit.SECONDS.toMillis(TimeUnit.MILLISECONDS.toSeconds(milliSeconds)));
         return ms;
@@ -181,7 +182,6 @@ public class GameView extends AppCompatActivity {
 
     public void clicReveil(View v)
     {
-        Log.i("---", "clic");
         if (partieEnCours)
         {
             //On récupère l'instance du bouton
@@ -193,11 +193,12 @@ public class GameView extends AppCompatActivity {
 
             //On incrémente le compteur
             compteur++;
-            texteCompteur.setText(compteur + "");
+            String message = compteur + "";
+            texteCompteur.setText(message);
 
             //On change la position du bouton avec un nombre aléatoire inférieur à la taille du layout
-            boutonReveil.setX(Constant.randomInt(0, (int) (layoutReveil.getWidth() - boutonReveil.getWidth())));
-            boutonReveil.setY(Constant.randomInt(0, (int) (layoutReveil.getHeight() - boutonReveil.getHeight())));
+            boutonReveil.setX(Constant.randomInt(0, (layoutReveil.getWidth() - boutonReveil.getWidth())));
+            boutonReveil.setY(Constant.randomInt(0, (layoutReveil.getHeight() - boutonReveil.getHeight())));
         }
     }
 

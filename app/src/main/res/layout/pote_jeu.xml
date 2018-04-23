@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <FrameLayout
@@ -31,19 +29,18 @@
                 android:progressBackgroundTint="@android:color/transparent"
                 android:progressTint="@color/colorPrimaryDark" />
 
-            <!-- TODO customiser avec https://android-dev-examples.blogspot.ca/2014/09/android-custom-horizontal-progressbar.html -->
-
             <TextView
                 android:id="@+id/timer"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:text="10:0"
+                android:text="@string/pote_compteur_depart"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="50sp" />
             <ImageView
                 android:id="@+id/imageMecEndormie"
                 android:layout_width="match_parent"
+                android:contentDescription="@string/pote_image_mec_endormi"
                 android:layout_height="wrap_content"
                 android:src="@drawable/mec_endormi" />
             
@@ -53,6 +50,7 @@
             android:id="@+id/imageConfettis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/pote_image_victoire"
             android:alpha="0"
             android:src="@drawable/reveil_gagne_background" />
 
@@ -61,6 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="0"
+            android:contentDescription="@string/pote_image_defaite"
             android:src="@drawable/reveil_perdu_background" />
 
         <LinearLayout
@@ -74,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="200sp"
-                android:text="Gagné !"
+                android:text="@string/pote_titre_victoire"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="50sp"
@@ -84,9 +83,9 @@
                 android:id="@+id/texteFin2"
                 android:layout_width="300sp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40sp"
+                android:layout_marginStart="40sp"
                 android:backgroundTint="@android:color/background_light"
-                android:text="Bravo, tu as réussi à réveiller ton pote, resserre-lui donc un autre verre !"
+                android:text="@string/pote_message_victoire"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -96,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="50sp"
                 android:onClick="boutonSuivant"
-                android:text="La suite please !" />
+                android:text="@string/pote_texte_suite" />
         </LinearLayout>
 
         <LinearLayout
@@ -110,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="200sp"
-                android:text="Réveil ton pote !"
+                android:text="@string/pote_titre"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_dark"
                 android:textSize="40sp"
@@ -120,7 +119,7 @@
                 android:id="@+id/texteRegle2"
                 android:layout_width="300sp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40sp"
+                android:layout_marginStart="40sp"
                 android:backgroundTint="@android:color/background_light"
                 android:text="@string/regle_pote"
                 android:textAlignment="center"
@@ -132,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="50sp"
                 android:onClick="launchGame"
-                android:text="Go !" />
+                android:text="@string/pote_go" />
         </LinearLayout>
 
     </FrameLayout>

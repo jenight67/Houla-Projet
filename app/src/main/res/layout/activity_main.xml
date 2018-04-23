@@ -17,15 +17,15 @@
             android:id="@+id/imageAccueil"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/accueil_vue_background" />
+            android:contentDescription="@string/accueil_description_image_fond"
+            android:scaleType="centerCrop" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:orientation="vertical"
-            tools:layout_editor_absoluteY="511dp">
+            app:layout_constraintTop_toTopOf="parent">
 
             <Button
                 android:layout_width="180dp"
@@ -36,7 +36,7 @@
                 android:onClick="launchGame"
                 android:text="@string/play"
                 android:textColor="@color/blanc"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="normal|bold" />
 
             <Button
@@ -48,7 +48,7 @@
                 android:onClick="launchOption"
                 android:text="@string/option"
                 android:textColor="@color/blanc"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 

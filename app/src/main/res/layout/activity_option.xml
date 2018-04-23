@@ -6,24 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="uqac.dim.houla.MainActivity">
+    tools:context="uqac.dim.houla.menu_options.OptionActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageFond2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            tools:layout_editor_absoluteY="148dp" />
-
-        <ImageView
             android:id="@+id/imageFondoptions"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="false"
+            android:contentDescription="@string/options_descrpition_image_fond"
             android:cropToPadding="false"
             android:scaleType="centerCrop"
             android:visibility="visible" />
@@ -31,76 +25,63 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/pote"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/reveil"
-                android:onClick="choisirJeu"
-                android:text="Réveille ton pote" />
-
-            <Button
-                android:id="@+id/redac"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/sleep"
-                android:layout_toEndOf="@+id/sleep"
-                android:onClick="choisirJeu"
-                android:text="Rédige ta rédac" />
-
-            <Button
-                android:id="@+id/couette"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/reveil"
-                android:onClick="choisirJeu"
-                android:text="Remonte ta couette" />
-
-            <Button
-                android:id="@+id/bourre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/cash"
-                android:onClick="choisirJeu"
-                android:text="Bourré or not ?" />
+            android:layout_marginEnd="100dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="150dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <Button
                 android:id="@+id/reveil"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
                 android:onClick="choisirJeu"
-                android:text="Eteins ton réveil" />
+                style="@style/boutonSombrePetit"
+                android:text="@string/reveil_titre" />
 
             <Button
-                android:id="@+id/cash"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/motivation"
+                android:id="@+id/couette"
+                style="@style/boutonSombrePetit"
                 android:onClick="choisirJeu"
-                android:text="Balance du cash !" />
+                android:text="@string/couette_titre" />
+
+            <Button
+                android:id="@+id/pote"
+                style="@style/boutonSombrePetit"
+                android:onClick="choisirJeu"
+                android:text="@string/pote_titre" />
 
             <Button
                 android:id="@+id/course"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/couette"
-                android:layout_toEndOf="@+id/pote"
                 android:onClick="choisirJeu"
-                android:text="Arrive à l'heure" />
+                style="@style/boutonSombrePetit"
+                android:text="@string/heure_titre" />
+
+            <Button
+                android:id="@+id/redac"
+                style="@style/boutonSombrePetit"
+                android:onClick="choisirJeu"
+                android:text="@string/redac_titre" />
+
+            <Button
+                android:id="@+id/cash"
+                style="@style/boutonSombrePetit"
+                android:onClick="choisirJeu"
+                android:text="@string/cash_titre" />
+
+            <Button
+                android:id="@+id/bourre"
+                style="@style/boutonSombrePetit"
+                android:onClick="choisirJeu"
+                android:text="@string/bourre_titre" />
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Retour"
+                style="@style/boutonSombrePetit"
+                android:layout_marginTop="10dp"
+                android:onClick="retour"
+                android:text="@string/retour"
+                android:textStyle="bold"
                 tools:layout_editor_absoluteX="40dp"
                 tools:layout_editor_absoluteY="150dp" />
         </LinearLayout>

@@ -21,7 +21,8 @@ public class ScoreActivity extends AppCompatActivity {
         Log.i("score",score + "");
         //On récupère le champ du score et on l'affiche
         TextView textView = findViewById(R.id.score);
-        textView.setText("Votre score est de " + String.valueOf(score) + " points");
+        String message = getString(R.string.score_texte_final1) + " " + String.valueOf(score) + " " + getString(R.string.score_texte_final2);
+        textView.setText(message);
 
         //On récupère l'imageView
         ImageView fond = findViewById(R.id.fond_score);
