@@ -30,7 +30,7 @@ public class MainActivity extends Activity
             uqac.dim.houla.course.gameActivity.class,
             uqac.dim.houla.redac.GameView.class,
             uqac.dim.houla.cash.GameView.class,
-            uqac.dim.houla.bourre.GameView.class
+            uqac.dim.houla.vivant.GameView.class
     };
 
     //Score du joueur
