@@ -6,6 +6,12 @@
         android:name="android.hardware.sensor.accelerometer"
         android:required="true" />
 
+    <uses-feature
+        android:name="android.hardware.sensor.proximity"
+        android:required="true" />
+
+
+
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
@@ -33,6 +39,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".pote.GameView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".vivant.GameView"
             android:screenOrientation="portrait" />
         <activity
             android:name=".redac.GameView"

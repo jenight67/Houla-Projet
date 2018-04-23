@@ -46,7 +46,8 @@ public class OptionActivity extends AppCompatActivity
             switch (v.getId()) {
 
                 case R.id.bourre:
-
+                    intent = new Intent(this, uqac.dim.houla.vivant.GameView.class);
+                    startActivity(intent);
                     break;
                 case R.id.cash:
                     intent = new Intent(this, uqac.dim.houla.cash.GameView.class);
