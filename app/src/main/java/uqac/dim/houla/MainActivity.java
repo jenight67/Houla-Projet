@@ -29,7 +29,6 @@ public class MainActivity extends Activity
             uqac.dim.houla.reveil.GameView.class,
             uqac.dim.houla.course.gameActivity.class,
             uqac.dim.houla.pote.GameView.class,
-            uqac.dim.houla.course.gameActivity.class,
             uqac.dim.houla.redac.GameView.class,
             uqac.dim.houla.cash.GameView.class,
             uqac.dim.houla.vivant.GameView.class
@@ -77,7 +76,6 @@ public class MainActivity extends Activity
         //Lancement du premier minijeu
         Intent intent = new Intent(this, ordreJeux[0]);
         //Utilisé par gameActivity
-        intent.putExtra("game",minijeuJeremy%2);
         minijeuJeremy++;
         startActivityForResult(intent, 0);
     }
