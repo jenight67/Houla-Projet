@@ -1,9 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:id="@+id/layoutGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <ProgressBar
+                android:id="@+id/progressionJeu"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20sp"
+                android:background="@android:color/transparent"
+                android:indeterminate="false"
+                android:max="100"
+                android:maxHeight="20sp"
+                android:minHeight="20sp"
+                android:progress="100"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/pote_compteur_depart"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="50sp" />
+            <ImageView
+                android:id="@+id/imageMecEndormie"
+                android:layout_width="match_parent"
+                android:contentDescription="@string/pote_image_mec_endormi"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mec_endormi" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageConfettis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/pote_image_victoire"
+            android:alpha="0"
+            android:src="@drawable/reveil_gagne_background" />
+
+        <ImageView
+            android:id="@+id/imageTriste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            android:contentDescription="@string/pote_image_defaite"
+            android:src="@drawable/reveil_perdu_background" />
+
+        <LinearLayout
+            android:id="@+id/layoutFin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/texteFin1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200sp"
+                android:text="@string/pote_titre_victoire"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/texteFin2"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40sp"
+                android:backgroundTint="@android:color/background_light"
+                android:text="@string/pote_message_victoire"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/buttonSuivant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="50sp"
+                android:onClick="boutonSuivant"
+                android:text="@string/pote_texte_suite" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutRegles"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/texteRegle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200sp"
+                android:text="@string/pote_titre"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/texteRegle2"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40sp"
+                android:backgroundTint="@android:color/background_light"
+                android:text="@string/regle_vivant"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/buttonGo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="50sp"
+                android:onClick="launchGame"
+                android:text="@string/pote_go" />
+        </LinearLayout>
+
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>
