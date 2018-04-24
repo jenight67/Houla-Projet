@@ -105,8 +105,9 @@ public class MainActivity extends Activity
         //Incrémnent du nombre de mini-jeux effectués
         effectues++;
         //Si tous les mini-jeux ont été joués, alors appeler la fonction de fin, sinon appeler le minijeu suivant
-        if (effectues == 7)
+        if (effectues >= ordreJeux.length)
         {
+            Log.i("MainActivity", "EndGame");
             endGame();
         }
         else
