@@ -12,7 +12,6 @@ import android.widget.ImageView;
 
 import java.util.Hashtable;
 
-import uqac.dim.houla.course.gameActivity;
 import uqac.dim.houla.menu_options.OptionActivity;
 
 import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
