@@ -179,8 +179,13 @@ public class GameView extends AppCompatActivity {
 
     public void boutonSuivant(View v)
     {
+        finish();
+    }
+
+    @Override
+    public void finish() {
         Intent returnIntent = new Intent();
-        returnIntent.putExtra("win", gagne);
+        returnIntent.putExtra("win",true);
         setResult(Activity.RESULT_OK,returnIntent);
         super.finish();
     }

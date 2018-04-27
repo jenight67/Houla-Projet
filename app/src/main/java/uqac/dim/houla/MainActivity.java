@@ -28,7 +28,6 @@ public class MainActivity extends Activity
             uqac.dim.houla.reveil.GameView.class,
             uqac.dim.houla.course.gameActivity.class,
             uqac.dim.houla.pote.GameView.class,
-            uqac.dim.houla.course.gameActivity.class,
             uqac.dim.houla.redac.GameView.class,
             uqac.dim.houla.cash.GameView.class,
             uqac.dim.houla.vivant.GameView.class
@@ -76,7 +75,6 @@ public class MainActivity extends Activity
         //Lancement du premier minijeu
         Intent intent = new Intent(this, ordreJeux[0]);
         //Utilisé par gameActivity
-        intent.putExtra("game",minijeuJeremy%2);
         minijeuJeremy++;
         startActivityForResult(intent, 0);
     }
@@ -106,8 +104,9 @@ public class MainActivity extends Activity
         //Incrémnent du nombre de mini-jeux effectués
         effectues++;
         //Si tous les mini-jeux ont été joués, alors appeler la fonction de fin, sinon appeler le minijeu suivant
-        if (effectues == 7)
+        if (effectues >= ordreJeux.length)
         {
+            Log.i("MainActivity", "EndGame");
             endGame();
         }
         else

@@ -1,5 +1,6 @@
 package uqac.dim.houla.vivant;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -171,7 +172,14 @@ public class GameView extends AppCompatActivity {
 
     public void boutonSuivant(View v)
     {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void finish() {
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("win",true);
+        setResult(Activity.RESULT_OK,returnIntent);
+        super.finish();
     }
 }
