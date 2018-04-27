@@ -66,6 +66,6 @@
     <string name="reveil_message_defaite_2">fois, bon allez, on continue…</string>
     <string name="cash_message_fin">Comment dire… Finalement tu n\'as peut-être pas autant de cash sur toi que ce que tu pensais, aller, pour te consoler tu peux passer à l\'étape suivante !</string>
     <string name="cash_titre_fin">Euh… C\'est la dèche</string>
-    <string name="score_texte_final1">Votre score est de</string>
+    <string name="score_texte_final1">Ton score est de</string>
     <string name="score_texte_final2">points</string>
 </resources>

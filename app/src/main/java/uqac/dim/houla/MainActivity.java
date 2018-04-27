@@ -21,10 +21,11 @@ public class MainActivity extends Activity
     //Tableau contenant les résultats des jeux
     Hashtable<Class, Boolean> resultatsJeux = new Hashtable<>();
     //Utiliser pour mettre le bon parametre en intent pour mes minijeux.
-    private int minijeuJeremy;
+    int minijeuJeremy;
 
     //Liste contenant les mini-jeux par ordre
     Class[] ordreJeux = {
+            uqac.dim.houla.PresentationActivity.class,
             uqac.dim.houla.reveil.GameView.class,
             uqac.dim.houla.course.gameActivity.class,
             uqac.dim.houla.pote.GameView.class,
@@ -34,7 +35,7 @@ public class MainActivity extends Activity
     };
 
     //Score du joueur
-    private int score = 0;
+    private int score = 6;
 
     //Nombre de mini-jeux effectués
     private int effectues = 0;

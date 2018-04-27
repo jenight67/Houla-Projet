@@ -10,8 +10,6 @@
         android:name="android.hardware.sensor.proximity"
         android:required="true" />
 
-
-
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
@@ -48,6 +46,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".cash.GameView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PresentationActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".course.gameActivity" />
         <activity android:name=".ScoreActivity" />

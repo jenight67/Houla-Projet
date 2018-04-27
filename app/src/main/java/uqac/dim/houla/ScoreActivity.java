@@ -27,7 +27,7 @@ public class ScoreActivity extends AppCompatActivity {
         //On récupère l'imageView
         ImageView fond = findViewById(R.id.fond_score);
 
-        if (score < 2)
+        if (score < 4)
         {
             //On affiche la vue de perte
             fond.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.score_perdu_background, 500, 500));
