@@ -50,8 +50,9 @@
             android:id="@+id/imageConfettis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/pote_image_victoire"
             android:alpha="0"
+            android:contentDescription="@string/pote_image_victoire"
+            android:scaleType="centerCrop"
             android:src="@drawable/reveil_gagne_background" />
 
         <ImageView
@@ -60,6 +61,7 @@
             android:layout_height="wrap_content"
             android:alpha="0"
             android:contentDescription="@string/pote_image_defaite"
+            android:scaleType="centerCrop"
             android:src="@drawable/reveil_perdu_background" />
 
         <LinearLayout
