@@ -75,6 +75,10 @@ public class OptionActivity extends AppCompatActivity
                     intent = new Intent(this, GameView.class);
                     startActivity(intent);
                     break;
+                case R.id.biere:
+                    intent = new Intent(this, uqac.dim.houla.biere.GameView.class);
+                    startActivity(intent);
+                    break;
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -70,8 +70,16 @@
                 android:text="@string/cash_titre" />
 
             <Button
-                android:id="@+id/bourre"
+                android:id="@+id/biere"
                 style="@style/boutonSombrePetit"
+                android:onClick="choisirJeu"
+                android:text="@string/biere_titre" />
+
+            <Button
+                android:id="@+id/bourre2"
+                style="@style/boutonSombrePetit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:onClick="choisirJeu"
                 android:text="@string/bourre_titre" />
 
