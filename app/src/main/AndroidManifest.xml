@@ -48,6 +48,9 @@
             android:name=".cash.GameView"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".biere.GameView"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".PresentationActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".course.gameActivity" />

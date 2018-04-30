@@ -31,7 +31,8 @@ public class MainActivity extends Activity
             uqac.dim.houla.pote.GameView.class,
             uqac.dim.houla.redac.GameView.class,
             uqac.dim.houla.cash.GameView.class,
-            uqac.dim.houla.vivant.GameView.class
+            uqac.dim.houla.vivant.GameView.class,
+            uqac.dim.houla.biere.GameView.class
     };
 
     //Score du joueur
