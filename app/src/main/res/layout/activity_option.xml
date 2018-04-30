@@ -25,73 +25,90 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="100dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="150dp"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="0dp">
 
-            <Button
-                android:id="@+id/reveil"
-                android:onClick="choisirJeu"
-                style="@style/boutonSombrePetit"
-                android:text="@string/reveil_titre" />
-
-            <Button
-                android:id="@+id/couette"
-                style="@style/boutonSombrePetit"
-                android:onClick="choisirJeu"
-                android:text="@string/couette_titre" />
-
-            <Button
-                android:id="@+id/pote"
-                style="@style/boutonSombrePetit"
-                android:onClick="choisirJeu"
-                android:text="@string/pote_titre" />
-
-            <Button
-                android:id="@+id/course"
-                android:onClick="choisirJeu"
-                style="@style/boutonSombrePetit"
-                android:text="@string/heure_titre" />
-
-            <Button
-                android:id="@+id/redac"
-                style="@style/boutonSombrePetit"
-                android:onClick="choisirJeu"
-                android:text="@string/redac_titre" />
-
-            <Button
-                android:id="@+id/cash"
-                style="@style/boutonSombrePetit"
-                android:onClick="choisirJeu"
-                android:text="@string/cash_titre" />
-
-            <Button
-                android:id="@+id/biere"
-                style="@style/boutonSombrePetit"
-                android:onClick="choisirJeu"
-                android:text="@string/biere_titre" />
-
-            <Button
-                android:id="@+id/bourre"
-                style="@style/boutonSombrePetit"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="choisirJeu"
-                android:text="@string/bourre_titre" />
+                android:layout_height="fill_parent"
+                >
 
-            <Button
-                android:id="@+id/button"
-                style="@style/boutonSombrePetit"
-                android:layout_marginTop="10dp"
-                android:onClick="retour"
-                android:text="@string/retour"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="40dp"
-                tools:layout_editor_absoluteY="150dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="100dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/couette"
+                        style="@style/boutonSombrePetit"
+                        android:layout_width="match_parent"
+                        android:onClick="choisirJeu"
+                        android:text="@string/couette_titre" />
+
+                    <Button
+                        android:id="@+id/reveil"
+                        style="@style/boutonSombrePetit"
+                        android:layout_width="match_parent"
+                        android:onClick="choisirJeu"
+                        android:text="@string/reveil_titre" />
+
+                    <Button
+                        android:id="@+id/cash"
+                        style="@style/boutonSombrePetit"
+                        android:layout_width="match_parent"
+                        android:onClick="choisirJeu"
+                        android:text="@string/cash_titre" />
+
+                    <Button
+                        android:id="@+id/biere"
+                        style="@style/boutonSombrePetit"
+                        android:layout_width="match_parent"
+                        android:onClick="choisirJeu"
+                        android:text="@string/biere_titre" />
+
+                    <Button
+                        android:id="@+id/course"
+                        style="@style/boutonSombrePetit"
+                        android:layout_width="match_parent"
+                        android:onClick="choisirJeu"
+                        android:text="@string/heure_titre" />
+
+                    <Button
+                        android:id="@+id/bourre"
+                        style="@style/boutonSombrePetit"
+                        android:layout_width="match_parent"
+                        android:onClick="choisirJeu"
+                        android:text="@string/bourre_titre" />
+
+                    <Button
+                        android:id="@+id/pote"
+                        style="@style/boutonSombrePetit"
+                        android:layout_width="match_parent"
+                        android:onClick="choisirJeu"
+                        android:text="@string/pote_titre" />
+
+                    <Button
+                        android:id="@+id/redac"
+                        style="@style/boutonSombrePetit"
+                        android:layout_width="match_parent"
+                        android:onClick="choisirJeu"
+                        android:text="@string/redac_titre" />
+
+                    <Button
+                        android:id="@+id/button"
+                        style="@style/boutonSombrePetit"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:onClick="retour"
+                        android:text="@string/retour"
+                        android:textStyle="bold"
+                        tools:layout_editor_absoluteX="40dp"
+                        tools:layout_editor_absoluteY="150dp" />
+                </LinearLayout>
+            </ScrollView>
         </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>
