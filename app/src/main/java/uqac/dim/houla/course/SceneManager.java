@@ -15,15 +15,23 @@ public class SceneManager {
     public static int ACTIVE_SCENES;
 
     public SceneManager(int game){
-        ACTIVE_SCENES = game;
+        ACTIVE_SCENES = 0;
         Log.i("DICJ","New courseScene");
 
-        //Scene 0
+
+        if(game == 0){
+            gm = new courseScene();
+            scenes.add(gm);
+        } else {
+            cm = new couetteScene();
+            scenes.add(cm);
+        }
+        /*//Scene 0
         gm = new courseScene();
         scenes.add(gm);
         //Scene 1
         cm = new couetteScene();
-        scenes.add(cm);
+        scenes.add(cm);*/
     }
 
     public void receiveTouch(MotionEvent event){

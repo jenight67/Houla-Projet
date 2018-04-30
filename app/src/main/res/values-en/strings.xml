@@ -70,7 +70,7 @@
     <string name="reveil_description_image_defaite">background_defeat</string>
     <string name="reveil_description_image_accueil">background_home</string>
     <string name="biere_titre">Beer Pong !</string>
-    <string name="biere_victoire">Congratulation, your friend drunk </string>
+    <string name="biere_victoire">Congratulation, your friend drank </string>
     <string name="biere_victoire_2"> drinks thanks to you ! Now you can enjoy the party !</string>
-    <string name="biere_defaite">Well... your friend won\'t get drunk tonight thank to you ! </string>
+    <string name="biere_defaite">Well… your friend won\'t get drunk tonight thank to you ! </string>
 </resources>

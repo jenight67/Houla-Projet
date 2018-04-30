@@ -2,7 +2,6 @@ package uqac.dim.houla.course;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class gameActivity extends Activity {

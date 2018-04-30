@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.util.Log;
 import android.view.MotionEvent;
 
 import uqac.dim.houla.Constant;
@@ -44,7 +45,13 @@ public class couetteScene implements Scene {
         startTime = System.currentTimeMillis();
 
         BitmapFactory bf = new BitmapFactory();
-        backgroundEndormi = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.couette_background_endormi);
+        //Reduit la taille de l'image car trop grande en mémoire.
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.outHeight = 500;
+        options.outWidth = 200;
+        backgroundEndormi = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.couette_background_endormi,options);
+        Log.i("DICJ","Image chargée");
+
 
         couettePoint = new Point(Constant.SCREEN_WIDTH/2,COUETTE_HEIGHT);
         couette = new Couette(new Rect(0,3*Constant.SCREEN_HEIGHT/5, Constant.SCREEN_WIDTH,Constant.SCREEN_HEIGHT));
