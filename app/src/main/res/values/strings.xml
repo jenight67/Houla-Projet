@@ -71,6 +71,6 @@
     <string name="biere_titre">Bière Pong !</string>
     <string name="biere_victoire">Bravo, ton pote as bu </string>
     <string name="biere_victoire_2"> verres grâce a toi ! La soirée commence bien !</string>
-    <string name="biere_defaite">Bon... ce n\'est ton pote qui risque d\'être bourré ce soir ! </string>
+    <string name="biere_defaite">Bon… ce n\'est pas ton pote qui risque d\'être bourré ce soir ! </string>
 
 </resources>

@@ -21,8 +21,12 @@ public class Couette implements GameObject {
     public Couette(Rect rectangle){
         this.rectangle = rectangle;
 
+        //Reduit la taille de l'image car trop grande en mémoire.
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.outHeight = 500;
+        options.outWidth = 200;
         BitmapFactory bf = new BitmapFactory();
-        couette = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.couette_background_endormi);
+        couette = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.couette_background_endormi,options);
     }
 
     @Override
@@ -45,7 +49,6 @@ public class Couette implements GameObject {
     public void incrementY(float y){
         rectangle.top += y;
         rectangle.bottom += y;
-        //Laisser ça là sinon les bananes sont invisibles.
 
         this.update();
 
