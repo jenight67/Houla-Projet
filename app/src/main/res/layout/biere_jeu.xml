@@ -7,50 +7,186 @@
     android:background="@color/bleu_sombre"
     android:backgroundTint="@color/bleu_sombre">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="190dp"
-        app:srcCompat="@drawable/biere_jeu_asset2"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="49dp" />
+    <LinearLayout
+        android:id="@+id/layoutGeneral"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5">
+
+            <TextView
+                android:id="@+id/compteur"
+                android:layout_width="79dp"
+                android:layout_height="54dp"
+                android:layout_marginEnd="43dp"
+                android:text="0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progressionJeu"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:background="@color/blanc"
+                android:indeterminate="false"
+                android:max="100"
+                android:maxHeight="20sp"
+                android:minHeight="20sp"
+                android:progress="100"
+                android:progressBackgroundTint="@color/blanc"
+                android:progressTint="@color/bleu_sombre" />
+
+            <ImageView
+                android:id="@+id/gobelet"
+                android:layout_width="wrap_content"
+                android:layout_height="190dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progressionJeu"
+                app:srcCompat="@drawable/biere_jeu_asset2" />
+
+            <ImageButton
+                android:id="@+id/boule"
+                android:layout_width="61dp"
+                android:layout_height="64dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="290dp"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@+id/compteur"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gobelet"
+                app:srcCompat="@drawable/biere_jeu_asset1" />
+
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="69dp"
+                android:layout_height="46dp"
+                android:text="TextView"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="49dp" />
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="75dp"
-        app:srcCompat="@drawable/biere_jeu_asset1"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="476dp" />
-
-    <TextView
-        android:id="@+id/compteur"
-        android:layout_width="79dp"
-        android:layout_height="54dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="289dp"
-        tools:layout_editor_absoluteY="497dp" />
-
-    <TextView
-        android:id="@+id/timer"
-        android:layout_width="69dp"
-        android:layout_height="46dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="49dp" />
-
-    <ProgressBar
-        android:id="@+id/progressionJeu2"
-        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:id="@+id/imageConfettis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="5"
-        android:background="@color/blanc"
-        android:indeterminate="false"
-        android:max="100"
-        android:maxHeight="20sp"
-        android:minHeight="20sp"
-        android:progress="100"
-        android:progressBackgroundTint="@color/blanc"
-        android:progressTint="@color/bleu_sombre" />
+        android:alpha="0"
+        android:contentDescription="@string/reveil_desciption_image_victoire"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/imageTriste"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:contentDescription="@string/reveil_description_image_defaite"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:id="@+id/layoutFin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/texteFin1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200sp"
+            android:text="@string/reveil_texte_victoire"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/texteFin2"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50sp"
+            android:backgroundTint="@android:color/background_light"
+            android:text="@string/reveil_message_victoire"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/boutonSuivant"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/bleu_sombre"
+            android:onClick="boutonSuivant"
+            android:text="@string/reveil_message_suite"
+            android:textColor="@color/blanc"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="652dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutRegles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageAccueil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/reveil_description_image_accueil"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:id="@+id/compteur"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="10"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="77dp">
+
+                <Button
+                    android:id="@+id/buttonGo"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="100dp"
+                    android:layout_marginTop="240dp"
+                    android:backgroundTint="@color/bleu_sombre"
+                    android:onClick="launchGame"
+                    android:text="@string/reveil_texte_go"
+                    android:textColor="@color/blanc"
+                    android:textSize="20sp"
+                    tools:layout_editor_absoluteX="50dp"
+                    tools:layout_editor_absoluteY="652dp" />
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

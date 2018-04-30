@@ -68,5 +68,9 @@
     <string name="cash_titre_fin">Euh… C\'est la dèche</string>
     <string name="score_texte_final1">Ton score est de</string>
     <string name="score_texte_final2">points</string>
-    <string name="biere_titre">La bière !</string>
+    <string name="biere_titre">Bière Pong !</string>
+    <string name="biere_victoire">Bravo, ton pote as bu </string>
+    <string name="biere_victoire_2"> verres grâce a toi ! La soirée commence bien !</string>
+    <string name="biere_defaite">Bon... ce n\'est ton pote qui risque d\'être bourré ce soir ! </string>
+
 </resources>

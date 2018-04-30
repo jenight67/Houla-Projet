@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -17,8 +18,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.view.View.OnTouchListener;
 import android.widget.TextView;
-
+import android.view.MotionEvent;
+import android.util.DisplayMetrics;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import uqac.dim.houla.Constant;
@@ -26,7 +30,7 @@ import uqac.dim.houla.R;
 
 import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
 
-public class GameView extends AppCompatActivity {
+public class GameView extends AppCompatActivity implements OnTouchListener{
 
     int compteur;
     boolean partieEnCours;
@@ -52,6 +56,9 @@ public class GameView extends AppCompatActivity {
         //On met le résultat de jeu à faux
         win = false;
 
+        //On affiche l'image de fond
+        ImageView image_accueil = findViewById(R.id.imageAccueil);
+        image_accueil.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reveil_regles_background, 500, 500));
     }
 
     public void launchGame(View v)
@@ -67,6 +74,10 @@ public class GameView extends AppCompatActivity {
 
         //On passe l'indicateur de partie à true
         partieEnCours = true;
+
+        //ajout d'un listener sur la balle du bière pong
+        ImageButton boutonBoule = findViewById(R.id.boule);
+        boutonBoule.setOnTouchListener(this);
 
         //On récuèpère l'instance du texte du timer
         final TextView texteTimer = findViewById(R.id.timer);
@@ -85,6 +96,8 @@ public class GameView extends AppCompatActivity {
                 texteTimer.setText(R.string.reveil_texte_compteur_depart);
             }
         }.start();
+
+
     }
 
     protected void endGame()
@@ -120,14 +133,14 @@ public class GameView extends AppCompatActivity {
         //On récupère le message de fin
         TextView messageFin = findViewById(R.id.texteFin2);
 
-        if (compteur >= 8)
+        if (compteur >= 3)
         {
             //On met le résultat de jeu à true
             win = true;
             //On adapte le titre de fin
             titreFin.setText(R.string.reveil_texte_victoire);
             //On adapte le message de fin
-            String message = getString(R.string.redac_message_victoire_1) + " " + compteur + " " + getString(R.string.reveil_message_victoire_2);
+            String message = getString(R.string.biere_victoire) + " " + compteur + " " + getString(R.string.biere_victoire_2);
             messageFin.setText(message);
             //On récupère l'instance de l'image des confettis
             ImageView imageConfettis = findViewById(R.id.imageConfettis);
@@ -148,7 +161,7 @@ public class GameView extends AppCompatActivity {
             //On adapte le titre de fin
             titreFin.setText(R.string.reveil_message_defaite);
             //On adapte le message de fin
-            String message = getString(R.string.reveil_message_defaite_1) + " " + compteur + " " + getString(R.string.reveil_message_defaite_2);
+            String message = getString(R.string.biere_defaite);
             messageFin.setText(message);
             titreFin.setTextColor(getResources().getColor(R.color.red));
             //On récupère l'instance de l'image triste
@@ -174,27 +187,76 @@ public class GameView extends AppCompatActivity {
         return ms;
     }
 
-    public void clicBalle(View v)
-    {
-        if (partieEnCours)
-        {
-            //On récupère l'instance du bouton
-            ImageButton boutonReveil = findViewById(R.id.imageButton);
-            //On récupère l'instance du layout dans lequel on va faire bouger le réveil
-            ConstraintLayout layoutReveil = findViewById(R.id.reveilLayout);
-            //On récupère l'affichage du nombre de clics
-            TextView texteCompteur = findViewById(R.id.compteur);
 
-            //On incrémente le compteur
-            compteur++;
-            String message = compteur + "";
-            texteCompteur.setText(message);
+    public boolean onTouch(View v, MotionEvent event) {
 
-            //On change la position du bouton avec un nombre aléatoire inférieur à la taille du layout
-            boutonReveil.setX(Constant.randomInt(0, (layoutReveil.getWidth() - boutonReveil.getWidth())));
-            boutonReveil.setY(Constant.randomInt(0, (layoutReveil.getHeight() - boutonReveil.getHeight())));
+        if(partieEnCours) {
+
+            //reccupération de la taille de l'écran pour positionner la balle
+            DisplayMetrics metrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+
+            //détection des événements et déplacement de la balle
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    v.setX(event.getX() + v.getX());
+                    v.setY(event.getY() + v.getY());
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    v.setX(event.getX() + v.getX());
+                    v.setY(event.getY() + v.getY());
+                    break;
+                case MotionEvent.ACTION_UP:
+                    float x = event.getX() + v.getX();
+                    float y = event.getY() + v.getY();
+                    v.setX(x);
+                    v.setY(y);
+
+                    //réccupération des coordonnées du gobelet pour le score
+                    ImageView gobelet = findViewById(R.id.gobelet);
+
+                    float valXSucces = gobelet.getX() + (gobelet.getWidth() / 2);
+                    float valYSucces = gobelet.getY() + (gobelet.getHeight() / 2);
+
+                    if(x > valXSucces - 500 && x < valXSucces + 500 && y > valYSucces - 500 && y < valXSucces + 500 )
+                    {
+
+                        //On incrémente le compteur
+                        TextView texteCompteur = findViewById(R.id.compteur);
+                        compteur++;
+                        String message = compteur + "";
+                        texteCompteur.setText(message);
+                    }
+
+                    //on fait une pause pour permettre a l'utilisateur de voir ou il a posé la balle
+                    try {
+                        Thread.sleep(500);
+                    }
+                    catch(InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+
+                    //positionnement de la balle à sa place de départ
+                    v.setX(metrics.heightPixels / 4);
+                    v.setY(metrics.widthPixels + 290);
+
+                    //coordonnée aléatoire pour déplacer le verre
+                    Random r = new Random();
+                    int yG = r.nextInt((metrics.heightPixels - 1000) - 50) + 50;
+                    int xG = r.nextInt((metrics.widthPixels - 1000) - 50) + 50;
+
+                    //positionnement du verre
+                    gobelet.setY(yG);
+                    gobelet.setX(xG);
+                    break;
+            }
+            return true;
         }
+        return false;
     }
+
+
 
     public void boutonSuivant(View v)
     {
@@ -204,10 +266,6 @@ public class GameView extends AppCompatActivity {
             returnIntent.putExtra("win", win);
             setResult(Activity.RESULT_OK,returnIntent);
             super.finish();
-        }
-        else
-        {
-            clicBalle(v);
         }
     }
 }
