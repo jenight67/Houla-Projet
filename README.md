@@ -36,13 +36,19 @@ Mini-jeu en cours :
 ### Captures d'écran
 Menu Principal :
 
-![menu](https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/MenuPrincipal.PNG "Menu principal")
+<img src="https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/MenuPrincipal.PNG" width="200">
 
 Course :
 
-![course](https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Course.PNG "Course")
+<img src="https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Course.PNG" width="200">
+
 
 Reveil :
 
-![reveil](https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Reveil.PNG "Mini-jeu eteint ton reveil")
+<img src="https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Reveil.PNG" width="200">
+
+
+Biere Pong             |  Redaction
+:-------------------------:|:-------------------------:
+<img src="https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Beer.png" width="200"> | <img src="https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Redac.png" width="200">
 
