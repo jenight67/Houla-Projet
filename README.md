@@ -11,6 +11,7 @@ Dans Android Studio, cliquez sur File -> New -> Project From Version Control -> 
 - Framerate variable (lignes 69/78 de mainThread) pour les mini-jeux course et couette.
 - Bitmap.
 - Localisation française et anglaise.
+- Utilisation du SensorManager (Accelerometre et capteur de proximité)
 
 
 ### Notes : 
