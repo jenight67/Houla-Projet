@@ -111,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="200sp"
-                android:text="@string/pote_titre"
+                android:text="@string/vivant_titre"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_dark"
                 android:textSize="40sp"
