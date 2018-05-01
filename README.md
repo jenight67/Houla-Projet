@@ -36,7 +36,7 @@ Mini-jeu en cours :
 
 ### Captures d'écran
 
-Menu Principale             |  Menu des Options
+Menu Principal             |  Menu des Options
 :-------------------------:|:-------------------------:
 <img src="https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/MenuPrincipal.PNG" width="200"> | <img src="https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Options.png" width="200">
 
