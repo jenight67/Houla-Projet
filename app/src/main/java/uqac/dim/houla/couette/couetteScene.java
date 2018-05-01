@@ -16,40 +16,39 @@ import uqac.dim.houla.course.Scene;
 import uqac.dim.houla.course.gameActivity;
 
 public class couetteScene implements Scene {
-    private gameActivity main;
+    private gameActivity main; //Activité principale
 
-    private Point couettePoint;
-    private Couette couette;
-    private boolean movingCouette = false;
+    private Point couettePoint; //Point centrale de la couette
+    private Couette couette; //Objet couette (joueur)
+    private boolean movingCouette = false; //Est ce que la couette bouge
 
-    private long startTime;
-    private float speed = Constant.SCREEN_HEIGHT/10000.0f;
-    private float speedMult = 3;
+    private long startTime; //Temps de debut pour le timer
+    private float speed = Constant.SCREEN_HEIGHT/10000.0f; //Vitesse de descente de la couette
+    private float speedMult = 3; //Multiplicateur de vitesse (difficulté)
 
-    private Bitmap backgroundEndormi;
-    private Bitmap backgroundReveille;
-    private Rect backgroundRect;
+    private Bitmap backgroundEndormi; //Image de fond endormi
+    private Bitmap backgroundReveille; //Image de fond reveillé (perdu)
+    private Rect backgroundRect; //Rectangle accueillant le fond
 
 
-    private boolean gameOver = false;
-    private boolean win = false;
+    private boolean gameOver = false; //perdu
+    private boolean win = false; //gagné
     private long initTime;
-    private static final int TIMER = 10;
+    private static final int TIMER = 10; //Temps du timer en secondes
 
-    private static final int COUETTE_HEIGHT = Constant.SCREEN_HEIGHT*4/6;
+    private static final int COUETTE_HEIGHT = Constant.SCREEN_HEIGHT*4/6; //Hauteur initiale de la couette
 
     public couetteScene(){
 
         backgroundRect = new Rect(0,0,Constant.SCREEN_WIDTH,Constant.SCREEN_HEIGHT);
 
-        startTime = System.currentTimeMillis();
+        startTime = initTime = System.currentTimeMillis();
 
-        BitmapFactory bf = new BitmapFactory();
         //Reduit la taille de l'image car trop grande en mémoire.
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.outHeight = 500;
         options.outWidth = 200;
-        backgroundEndormi = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.couette_background_endormi,options);
+        backgroundEndormi = BitmapFactory.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.couette_background_endormi,options);
         Log.i("DICJ","Image chargée");
 
 
@@ -114,7 +113,7 @@ public class couetteScene implements Scene {
 
             couette.incrementY(speed * elapsedTime * speedMult);
 
-            //Fin du jeu
+            //Fin du jeu si la couette arrive trop bas.
             if(couettePoint.y >= Constant.SCREEN_HEIGHT)
                 gameOver = true;
         }
@@ -139,7 +138,7 @@ public class couetteScene implements Scene {
                 break;
             case MotionEvent.ACTION_MOVE:
                 if(movingCouette && !gameOver)
-                    couettePoint.set(Constant.SCREEN_WIDTH/2, (int)event.getY()); //Déplace le joueur mais le fait rester sur une ligne
+                    couettePoint.set(Constant.SCREEN_WIDTH/2, (int)event.getY()); //Déplace la couette mais le fait rester sur une ligne verticale
                 break;
             case MotionEvent.ACTION_UP:
                 movingCouette = false;

@@ -16,10 +16,9 @@ import uqac.dim.houla.R;
 
 public class Player implements GameObject {
 
-    private Rect rectangle;
-    private int color;
+    private Rect rectangle; //Recangle representant le joueur
 
-    // Credit pour l'animation :
+    // Credit pour l'animation (trouvée sur OpenGameArt.org):
     // Curt - cjc83486
     // https://opengameart.org/content/rpg-character
     private Animation idle;
@@ -33,8 +32,8 @@ public class Player implements GameObject {
         Log.i("DICJ","Debut Loading Player");
 
         this.rectangle = rectangle;
-        this.color = color;
 
+        //Chargement des animations
         BitmapFactory bf = new BitmapFactory();
         Bitmap[] idleBit = new Bitmap[3];
         idleBit[0] = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.course_player_idle0);

@@ -9,29 +9,21 @@ import java.util.ArrayList;
 import uqac.dim.houla.couette.couetteScene;
 
 public class SceneManager {
-    private courseScene gm;
-    private couetteScene cm;
-    private ArrayList<Scene> scenes = new ArrayList<>();
-    public static int ACTIVE_SCENES;
+    private ArrayList<Scene> scenes = new ArrayList<>();//Liste des scenes
+    public static int ACTIVE_SCENES; //Mini-jeu en cours
 
     public SceneManager(int game){
-        ACTIVE_SCENES = 0;
+        //determine quel mini*jeu est en est en cours de jeu
+        ACTIVE_SCENES = game;
         Log.i("DICJ","New courseScene");
 
-
-        if(game == 0){
-            gm = new courseScene();
-            scenes.add(gm);
-        } else {
-            cm = new couetteScene();
-            scenes.add(cm);
-        }
-        /*//Scene 0
-        gm = new courseScene();
+        //Charge les scenes en mémoire
+        //Scene 0
+        courseScene gm = new courseScene();
         scenes.add(gm);
         //Scene 1
-        cm = new couetteScene();
-        scenes.add(cm);*/
+        couetteScene cm = new couetteScene();
+        scenes.add(cm);
     }
 
     public void receiveTouch(MotionEvent event){

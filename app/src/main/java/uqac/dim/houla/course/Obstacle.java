@@ -11,15 +11,19 @@ import uqac.dim.houla.Constant;
 import uqac.dim.houla.R;
 
 /**
- * Created by User on 10/03/2018.
+ * Created by Jérémy on 10/03/2018.
  */
 
+/**
+ * Objet correspondant a un obstacle
+ */
 public class Obstacle implements GameObject {
 
-    private Rect rectangle;
-    private int color;
+    private Rect rectangle; //Rectangle acceuillant l'obstacle
 
+    //Credit pour l'animation (trouvée sur OpenGameArt.org):
     // © 2005-2013 Julien Jorge <julien.jorge@stuff-o-matic.com>
+    // Animation de la banane
     private AnimationManager am;
 
     public Rect getRectangle(){
@@ -28,12 +32,16 @@ public class Obstacle implements GameObject {
 
     public Obstacle(int height, int color, int startX, int startY, Animation idle){
         this.rectangle = new Rect(startX-100, startY, startX, startY+height );
-        this.color = color;
 
         // 0 = idle
         am = new AnimationManager(new Animation[]{idle});
     }
 
+    /**
+     * Verifie la collision entre le joueur et un obstacle
+     * @param player Joueur
+     * @return Si les objets sont en collision
+     */
     public boolean playerCollide(Player player){
         return rectangle.intersect(player.getRectangle());
     }
@@ -64,6 +72,10 @@ public class Obstacle implements GameObject {
         am.update();
     }
 
+    /**
+     * Permet de faire descendre les obstacles.
+     * @param y nombre de pixel de déplacement vers le bas
+     */
     public void incrementY(float y){
         rectangle.top += y;
         rectangle.bottom += y;

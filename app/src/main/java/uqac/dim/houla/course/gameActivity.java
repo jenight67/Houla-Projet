@@ -7,7 +7,6 @@ import android.os.Bundle;
 public class gameActivity extends Activity {
     private boolean win;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         int game = getIntent().getIntExtra("game",0);

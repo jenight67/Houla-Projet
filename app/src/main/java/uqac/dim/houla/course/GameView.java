@@ -16,11 +16,8 @@ import uqac.dim.houla.MainThread;
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
-    private MainThread thread;
-    private SceneManager manager;
-
-
-
+    private MainThread thread; //Threads donnant le tempo des calculs et des dessins (boucle de jeu)
+    private SceneManager manager; //Manager de scène pour pouvoir changer entre les differentes scenes.
 
     public GameView(Context context, int jeu){
         super(context);
@@ -29,11 +26,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         Constant.CURRENT_CONTEXT = context;
 
-
-
         thread = new MainThread(getHolder(), this);
 
         Log.i("DICJ","New SceneManager");
+
         manager = new SceneManager(jeu);
 
         setFocusable(true);
