@@ -24,6 +24,8 @@ import java.util.concurrent.TimeUnit;
 import uqac.dim.houla.MainActivity;
 import uqac.dim.houla.R;
 
+import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
+
 public class GameView extends AppCompatActivity {
 
     // Le sensor manager
@@ -81,8 +83,8 @@ public class GameView extends AppCompatActivity {
                 ProgressBar progressionJeu = findViewById(R.id.progressionJeu);
                 progressionJeu.setProgress((int) millisUntilFinished / 100);
                 if(gagne) {
-                    ImageView mecReveille = findViewById(R.id.imageMecEndormie);
-                    mecReveille.setImageResource(R.drawable.mec_reveille);
+                    ImageView mecVivant = findViewById(R.id.imageMecEndormie);
+                    mecVivant.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.vivant_gagne, 500, 500));
                 }
             }
 

@@ -33,7 +33,7 @@
                 android:id="@+id/timer"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:text="@string/pote_compteur_depart"
+                android:text="@string/vivant_compteur_depart"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="50sp" />
@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:contentDescription="@string/pote_image_mec_endormi"
                 android:layout_height="wrap_content"
-                android:src="@drawable/mec_endormi" />
+                android:src="@drawable/vivant_debut" />
 
         </LinearLayout>
 
@@ -51,7 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="0"
-            android:contentDescription="@string/pote_image_victoire"
+            android:contentDescription="@string/vivant_image_victoire"
             android:scaleType="centerCrop"
             android:src="@drawable/reveil_gagne_background" />
 
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="0"
-            android:contentDescription="@string/pote_image_defaite"
+            android:contentDescription="@string/vivant_image_defaite"
             android:scaleType="centerCrop"
             android:src="@drawable/reveil_perdu_background" />
 
@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="200sp"
-                android:text="@string/pote_titre_victoire"
+                android:text="@string/vivant_titre_victoire"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="50sp"
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40sp"
                 android:backgroundTint="@android:color/background_light"
-                android:text="@string/pote_message_victoire"
+                android:text="@string/vivant_message_victoire"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="50sp"
                 android:onClick="boutonSuivant"
-                android:text="@string/pote_texte_suite" />
+                android:text="@string/vivant_texte_suite" />
         </LinearLayout>
 
         <LinearLayout
@@ -133,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="50sp"
                 android:onClick="launchGame"
-                android:text="@string/pote_go" />
+                android:text="@string/vivant_go" />
         </LinearLayout>
 
     </FrameLayout>

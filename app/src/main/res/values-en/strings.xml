@@ -35,6 +35,14 @@
     <string name="pote_message_victoire">Congratulation! You managed to wake up your mate! Pour him another glass!</string>
     <string name="pote_texte_suite">Next please!</string>
     <string name="pote_go">Go !</string>
+    <string name="vivant_compteur_depart">10:0</string>
+    <string name="vivant_image_mec_mort">dead_guy</string>
+    <string name="vivant_image_victoire">victory_screen</string>
+    <string name="vivant_image_defaite">defeat_screen</string>
+    <string name="vivant_titre_victoire">Won !</string>
+    <string name="vivant_message_victoire">Congratulation! You can sleep with tranquility now !</string>
+    <string name="vivant_texte_suite">Next please!</string>
+    <string name="vivant_go">Go !</string>
     <string name="redac_description_image_accueil">image_home_background</string>
     <string name="redac_texte_compteur">10:0</string>
     <string name="redac_image_victoire">victory_screen</string>

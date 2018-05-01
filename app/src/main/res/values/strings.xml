@@ -34,6 +34,14 @@
     <string name="pote_message_victoire">Bravo, tu as réussi à réveiller ton pote, resserre-lui donc un autre verre !</string>
     <string name="pote_texte_suite">La suite please !</string>
     <string name="pote_go">Go !</string>
+    <string name="vivant_compteur_depart">10:0</string>
+    <string name="vivant_image_mec_mort">Mec mort</string>
+    <string name="vivant_image_victoire">Image victoire</string>
+    <string name="vivant_image_defaite">Image défaite</string>
+    <string name="vivant_titre_victoire">Gagné !</string>
+    <string name="vivant_message_victoire">Bravo, ton pote est encore vivant, tu pourras dormir sereinement !</string>
+    <string name="vivant_texte_suite">La suite please !</string>
+    <string name="vivant_go">Go !</string>
     <string name="redac_description_image_accueil">Image fond accueil</string>
     <string name="redac_texte_compteur">10:0</string>
     <string name="redac_image_victoire">Image victoire</string>

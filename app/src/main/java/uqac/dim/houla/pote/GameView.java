@@ -25,6 +25,8 @@ import java.util.concurrent.TimeUnit;
 import uqac.dim.houla.MainActivity;
 import uqac.dim.houla.R;
 
+import static uqac.dim.houla.ShowBitmap.decodeSampledBitmapFromResource;
+
 public class GameView extends AppCompatActivity {
     private SensorManager sm;
     private float acelVal; // current acceleration including gravity
@@ -89,7 +91,7 @@ public class GameView extends AppCompatActivity {
                 progressionJeu.setProgress((int) millisUntilFinished / 100);
                 if(gagne) {
                     ImageView mecReveille = findViewById(R.id.imageMecEndormie);
-                    mecReveille.setImageResource(R.drawable.mec_reveille);
+                    mecReveille.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.pote_gagne, 500, 500));
                 }
             }
 

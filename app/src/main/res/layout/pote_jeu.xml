@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:contentDescription="@string/pote_image_mec_endormi"
                 android:layout_height="wrap_content"
-                android:src="@drawable/mec_endormi" />
+                android:src="@drawable/pote_debut" />
             
         </LinearLayout>
 
