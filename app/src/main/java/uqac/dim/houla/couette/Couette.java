@@ -26,7 +26,7 @@ public class Couette implements GameObject {
         options.outHeight = 500;
         options.outWidth = 200;
         BitmapFactory bf = new BitmapFactory();
-        couette = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.couette_background_endormi,options);
+        couette = bf.decodeResource(Constant.CURRENT_CONTEXT.getResources(), R.drawable.couette_player,options);
     }
 
     @Override
