@@ -31,7 +31,7 @@ Mini-jeu terminé :
 - Biere Pong
 
 Mini-jeu en cours :
-- couette
+- couette (problème de chargement d'image en haute résolution)
 
 
 ### Captures d'écran
