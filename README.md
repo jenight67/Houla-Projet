@@ -2,7 +2,7 @@
 Projet d'Informatique Mobile UQAC 2018
 
 ### Pour importer le répertoire sur votre machine :
-Dans Android Studio, cliquez sur File -> New -> Project From Version Control -> Github, puis collez le lien de ce répertoire git (https://github.com/jenight67/Houla-Projet.git). Il se peut que vous ayez des avertissements ou erreurs dans les fichiers .iml ou des messages du type "Please, select Android APK" ; ce n'est pas grave, il suffit simplement de cliquer sur Tools -> Android -> Sync Project with Gradle Files.
+Dans Android Studio, cliquez sur File -> New -> Project From Version Control -> Github, puis collez le lien de ce répertoire git. Il se peut que vous ayez des avertissements ou erreurs dans les fichiers .iml ou des messages du type "Please, select Android APK" ; ce n'est pas grave, il suffit simplement de cliquer sur Tools -> Android -> Sync Project with Gradle Files.
 
 ### Résumé des fonctionnalité et technologies utilisées :
 
