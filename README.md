@@ -39,10 +39,10 @@ Mini-jeu en cours :
 
 Menu Principal             |  Menu des Options
 :-------------------------:|:-------------------------:
-<img src="https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/MenuPrincipal.PNG" width="200"> | <img src="https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Options.png" width="200">
+<img src="https://github.com/jeremytelliez/Houla-Projet/blob/master/ScreenProjet/MenuPrincipal.PNG" width="200"> | <img src="https://github.com/jeremytelliez/Houla-Projet/blob/master/ScreenProjet/Options.png" width="200">
 
 
 Biere Pong |  Redaction |  Course |  Reveil
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-<img src="https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Beer.png" width="200"> | <img src="https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Redac.png" width="200"> | <img src="https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Course.PNG" width="200"> | <img src="https://github.com/jenight67/Houla-Projet/blob/master/ScreenProjet/Reveil.PNG" width="200">
+<img src="https://github.com/jeremytelliez/Houla-Projet/blob/master/ScreenProjet/Beer.png" width="200"> | <img src="https://github.com/jeremytelliez/Houla-Projet/blob/master/ScreenProjet/Redac.png" width="200"> | <img src="https://github.com/jeremytelliez/Houla-Projet/blob/master/ScreenProjet/Course.PNG" width="200"> | <img src="https://github.com/jeremytelliez/Houla-Projet/blob/master/ScreenProjet/Reveil.PNG" width="200">
 
